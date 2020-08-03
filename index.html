@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script type="module" src="./field.js"></script>
+    </head>
+    <body>
+        <form>
+            <yot-field id="name" type="text" value="something" error="⚠️ not a real name">
+                Full name
+            </yot-field>
+            <yot-field id="phone" type="tel" placeholder="include the area code">
+                Number
+            </yot-field>
+            <yot-field id="email" type="email">
+                Email
+            </yot-field>
+            <yot-field id="date" type="date">
+                When
+            </yot-field>
+        </form>
+        <form style="max-width: 200px; margin-top: 2rem;">
+            <yot-field id="name" type="text" value="something" error="⚠️ not a real name">
+                Name
+            </yot-field>
+        </form>
+        <section style="margin-top: 2rem;">
+            Palette:
+            <div style="background-color: var(--palette-fountain-blue);"></div>
+            <div style="background-color: var(--palette-wedgewood);"></div>
+            <div style="background-color: var(--palette-cloudy);"></div>
+            <div style="background-color: var(--palette-crowshead);"></div>
+            <div style="background-color: var(--palette-marigold);"></div>
+        </section>
+        
+    </body>
+    <style>
+        yot-field {
+            margin: var(--padding-unit) 0;
+        }
+        div {
+            width: 48px;
+            height: 48px;
+            display: inline-block;
+        }
+
+        form {
+            background-color: var(--color-background);
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            padding: var(--padding-unit);
+        }
+
+        body {
+            --palette-crowshead: #2a160b;
+            --palette-marigold: #c19230;
+            --palette-cloudy: #f8fafc;
+            --palette-overcast: #ecf4f9;
+            --palette-fountain-blue: #62a9c1;
+            --palette-wedgewood: #497897;
+
+            --color-headline: var(--palette-fountain-blue);
+            --color-background: var(--palette-cloudy);
+            --color-background-alt: var(--palette-overcast);
+            --color-label-text: var(--palette-marigold);
+            --color-body-text: var(--palette-wedgewood);
+            --color-accent:  var(--palette-crowshead);
+            --color-accent-alt:  var(--palette-marigold);
+            --color-error-text: var(--color-accent-alt);
+
+            --font-size-body-text: 1rem;
+            --font-size-aside-text: 0.8rem;
+            --font-size-label-text: 0.75rem;
+            --font-family: sans-serif;
+
+            --padding-unit: 0.25rem;
+
+            font-family: var(--font-family);
+        }
+    </style>
+</html>
