@@ -18,21 +18,16 @@ template.innerHTML = `
         top: 0;
     }
 
-    /* 
-        if there is no value in the field 
-        i.e. if the placeholder is shown (we use a whitespace as default and opacity 0 for the placeholder text)
-    */
-    input:not(:focus):placeholder-shown + label {
+    :host(:not(:focus-within)) > input:placeholder-shown + label {
+        position: absolute;
         left: var(--padding-unit);
-        top: calc(100% - var(--padding-unit));
-        transform: translateY(-100%);
+        top: calc(var(--font-size-aside-text) + 2 * var(--padding-unit));
     }
 
-    :host {
+    :host { 
         display: block;
         font-size: var(--font-size-body-text);
         background-color: var(--color-background);
-        padding-top: calc(var(--font-size-body-text));
     }
 
     input:not(:focus):placeholder-shown + label {
@@ -40,11 +35,6 @@ template.innerHTML = `
         cursor: text;
         transition: all ease-out 100ms; 
     }
-
-    input:not(:focus):placeholder-shown {
-        background-color: var(--color-background-alt);
-    }
-
 
     label {
         color: var(--color-label-text);
@@ -59,12 +49,17 @@ template.innerHTML = `
         background-color: var(--color-background);
         color: var(--color-body-text);
         font-size: var(--font-size-body-text);
-        padding: var(--padding-unit);
+        padding-top: calc(var(--font-size-aside-text) + 2 * var(--padding-unit));
+        padding-bottom: var(--padding-unit);
     }
 
     input:focus {
         outline: none;
         border-bottom: solid 2px var(--color-body-text);
+    }
+
+    input:not(:focus):placeholder-shown {
+        background-color: var(--color-background-alt);
     }
 
     input::placeholder {
@@ -90,40 +85,40 @@ template.innerHTML = `
 `
 
 export class Field extends HTMLElement {
-    static get observedAttributes() {
-        return [ 'value', 'error', 'type', 'placeholder', 'id' ];
-    }
+  static get observedAttributes() {
+    return ['value', 'error', 'type', 'placeholder', 'id'];
+  }
 
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        const shadowRoot = this.attachShadow({mode: 'open'});
-        shadowRoot.appendChild(template.content.cloneNode(true));
-        this.shadowDOM = shadowRoot;
-    }
+    const shadowRoot = this.attachShadow({mode: 'open'});
+    shadowRoot.appendChild(template.content.cloneNode(true));
+    this.shadowDOM = shadowRoot;
+  }
 
-    attributeChangedCallback(name, oldVal, newVal) {
-        if (oldVal !== newVal) {
-            if (['type', 'value', 'placeholder', 'id'].includes(name)) {
-                this.shadowDOM.querySelector('input').setAttribute(name, newVal);
-            }
+  attributeChangedCallback(name, oldVal, newVal) {
+    if (oldVal !== newVal) {
+      if (['type', 'value', 'placeholder', 'id'].includes(name)) {
+        this.shadowDOM.querySelector('input').setAttribute(name, newVal);
+      }
 
-            if (['id'].includes(name)) {
-                this.shadowDOM.querySelector('label').setAttribute('for', newVal);
-            }
+      if (['id'].includes(name)) {
+        this.shadowDOM.querySelector('label').setAttribute('for', newVal);
+      }
 
-            if (['error'].includes(name)) {
-                if (newVal === null) {
-                    this.shadowDOM.removeChild(this.shadowDOM.querySelector('aside'));
-                } else {
-                    const errorEl = document.createElement('aside');
-                    errorEl.innerHTML = newVal;
-                    errorEl.setAttribute('aria-role', 'alert');
-                    this.shadowDOM.appendChild(errorEl);
-                }
-            }
+      if (['error'].includes(name)) {
+        if (newVal === null) {
+          this.shadowDOM.removeChild(this.shadowDOM.querySelector('aside'));
+        } else {
+          const errorEl = document.createElement('aside');
+          errorEl.innerHTML = newVal;
+          errorEl.setAttribute('aria-role', 'alert');
+          this.shadowDOM.appendChild(errorEl);
         }
       }
+    }
+  }
 }
 
 window.customElements.define('yot-field', Field);
