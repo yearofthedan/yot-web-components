@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <script type="module" src="./field.js"></script>
+        <script type="module" src="./button-action.js"></script>
     </head>
     <body>
         <form>
@@ -17,21 +18,32 @@
             <yot-field id="date" type="date">
                 When
             </yot-field>
+            <yot-button-action type="submit">
+                Submit
+            </yot-button-action>
         </form>
         <form style="max-width: 200px; margin-top: 2rem;">
             <yot-field id="name" type="text" value="something" error="⚠️ not a real name">
                 Name
             </yot-field>
+            <yot-button-action type="submit" action-state="loading">
+                Submit
+            </yot-button-action>
+            <yot-button-action type="submit" action-state="success">
+                Submit
+            </yot-button-action>
+
         </form>
         <section style="margin-top: 2rem;">
             Palette:
             <div style="background-color: var(--palette-fountain-blue);"></div>
             <div style="background-color: var(--palette-wedgewood);"></div>
             <div style="background-color: var(--palette-cloudy);"></div>
+            <div style="background-color: var(--palette-overcast);"></div>
             <div style="background-color: var(--palette-crowshead);"></div>
             <div style="background-color: var(--palette-marigold);"></div>
         </section>
-        
+
     </body>
     <style>
         yot-field {
@@ -74,6 +86,7 @@
             --font-family: sans-serif;
 
             --padding-unit: 0.25rem;
+            --base-unit: 0.125rem;
 
             font-family: var(--font-family);
         }

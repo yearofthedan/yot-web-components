@@ -50,6 +50,7 @@ template.innerHTML = `
         color: var(--color-label-text);
         font-size: var(--font-size-label-text);
         transition: all ease-in 100ms; 
+        font-family: inherit;
     }
 
     input {
