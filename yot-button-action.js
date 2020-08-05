@@ -103,7 +103,7 @@ const ACTION_STATES = ['success', 'loading'];
 
 export class Button extends HTMLElement {
   static get observedAttributes() {
-    return ['type', 'action-state'];
+    return ['action-state'];
   }
 
   constructor() {
@@ -111,6 +111,11 @@ export class Button extends HTMLElement {
 
     const shadowRoot = this.attachShadow({mode: 'open'});
     shadowRoot.appendChild(template.content.cloneNode(true));
+
+    const button = shadowRoot.querySelector('button');
+    this.getAttributeNames()
+      .forEach(attribute => button.setAttribute(attribute, this.getAttribute(attribute)));
+
     this.shadowDOM = shadowRoot;
   }
 
@@ -119,9 +124,6 @@ export class Button extends HTMLElement {
       if ('action-state' === name) {
         this.shadowDOM.querySelector('button').setAttribute('data-action-state', newVal);
         this.shadowDOM.querySelector('button').setAttribute('disabled', `${ACTION_STATES.includes(newVal)}`);
-      }
-      if ('type' === name) {
-        this.shadowDOM.querySelector('button').setAttribute(name, newVal);
       }
     }
   }

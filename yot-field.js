@@ -84,9 +84,11 @@ template.innerHTML = `
 </style>
 `
 
-export class Field extends HTMLElement {
+const INPUT_ATTRS = ['value', 'type', 'placeholder', 'id'];
+
+export class YotField extends HTMLElement {
   static get observedAttributes() {
-    return ['value', 'error', 'type', 'placeholder', 'id'];
+    return [...INPUT_ATTRS, 'error'];
   }
 
   constructor() {
@@ -94,20 +96,25 @@ export class Field extends HTMLElement {
 
     const shadowRoot = this.attachShadow({mode: 'open'});
     shadowRoot.appendChild(template.content.cloneNode(true));
+
+    const input = shadowRoot.querySelector('input');
+    this.getAttributeNames()
+      .forEach(attribute => input.setAttribute(attribute, this.getAttribute(attribute)));
+
     this.shadowDOM = shadowRoot;
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
     if (oldVal !== newVal) {
-      if (['type', 'value', 'placeholder', 'id'].includes(name)) {
+      if (INPUT_ATTRS.includes(name)) {
         this.shadowDOM.querySelector('input').setAttribute(name, newVal);
       }
 
-      if (['id'].includes(name)) {
+      if (name === 'id') {
         this.shadowDOM.querySelector('label').setAttribute('for', newVal);
       }
 
-      if (['error'].includes(name)) {
+      if (name === 'error') {
         if (newVal === null) {
           this.shadowDOM.removeChild(this.shadowDOM.querySelector('aside'));
         } else {
@@ -121,4 +128,4 @@ export class Field extends HTMLElement {
   }
 }
 
-window.customElements.define('yot-field', Field);
+window.customElements.define('yot-field', YotField);
