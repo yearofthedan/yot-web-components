@@ -23,8 +23,8 @@ export class YotButton extends LitElement {
       width: 100%;
       border-radius: calc(0.25rem);
       font-size: var(--font-size-body-text);
-      background-color: var(--color-background);
-      color: var(--color-label-text);
+      background-color: var(--palette-primary);
+      color: var(--palette-primary-on);
       outline: none;
       display: flex;
       justify-content: center;
@@ -38,8 +38,8 @@ export class YotButton extends LitElement {
     }
 
     button[data-action-state='idle']:hover {
-      background: var(--color-background-alt)
-        radial-gradient(circle, transparent 1%, var(--color-background-alt) 1%)
+      background: var(--palette-primary-light)
+        radial-gradient(circle, transparent 1%, var(--palette-primary-light) 1%)
         center/15000%;
     }
 
@@ -50,6 +50,10 @@ export class YotButton extends LitElement {
 
     button > slot {
       display: none;
+    }
+
+    button[disabled] {
+      background-color: var(--palette-primary-light);
     }
 
     button[data-action-state='loading'] > slot[part='loading'] {
@@ -67,11 +71,10 @@ export class YotButton extends LitElement {
     slot[part='loading'] > span {
       --spinner-radius: calc(4 * var(--unit));
       display: block;
-      background-color: inherit;
-      color: var(--color-background-alt);
+      color: var(--palette-primary-light-on);
       width: calc(2 * var(--spinner-radius));
       height: calc(2 * var(--spinner-radius));
-      border-top: 2px solid var(--color-accent);
+      border-top: 2px solid var(--palette-primary-light-on);
       animation: 2s rotate linear infinite;
       border-radius: 100%;
     }
@@ -79,8 +82,7 @@ export class YotButton extends LitElement {
     slot[part='success'] > span {
       --radius: calc(4 * var(--unit));
       display: block;
-      background-color: inherit;
-      color: var(--color-accent);
+      color: var(--palette-primary-light-on);
       width: calc(2 * var(--radius));
       height: calc(2 * var(--radius));
       border-radius: 100%;

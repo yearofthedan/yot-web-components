@@ -13,26 +13,31 @@
     "start:build": "npm run build && es-dev-server --root-dir . --app-index demo/index.html --open --compatibility none"
   },
   "dependencies": {
-    "lit-html": "^1.1.2",
-    "lit-element": "^2.2.1"
+    "lit-element": "^2.2.1",
+    "lit-html": "^1.1.2"
   },
   "devDependencies": {
-    "es-dev-server": "^1.23.0",
-    "typescript": "~3.8.2",
-    "concurrently": "^5.1.0",
-    "tslib": "^1.11.0",
-    "eslint": "^6.1.0",
+    "@open-wc/building-rollup": "^1.0.0",
+    "@open-wc/demoing-storybook": "^2.0.0",
     "@open-wc/eslint-config": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^2.20.0",
     "@typescript-eslint/parser": "^2.20.0",
-    "prettier": "^2.0.4",
+    "babel-loader": "^8.1.0",
+    "concurrently": "^5.1.0",
+    "es-dev-server": "^1.23.0",
+    "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.11.0",
     "husky": "^1.0.0",
     "lint-staged": "^10.0.0",
-    "@open-wc/demoing-storybook": "^2.0.0",
-    "@open-wc/building-rollup": "^1.0.0",
+    "prettier": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-styleguidist": "^11.0.8",
     "rimraf": "^2.6.3",
-    "rollup": "^2.3.4"
+    "rollup": "^2.3.4",
+    "tslib": "^1.11.0",
+    "typescript": "~3.8.2",
+    "webpack": "^4.44.1"
   },
   "eslintConfig": {
     "extends": [

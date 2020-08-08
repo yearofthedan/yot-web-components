@@ -10,21 +10,30 @@ const styles = `
     }
 
     body {
-      --palette-crowshead: #2a160b;
-      --palette-marigold: #c19230;
-      --palette-cloudy: #f8fafc;
-      --palette-overcast: #ecf4f9;
-      --palette-fountain-blue: #62a9c1;
-      --palette-wedgewood: #497897;
-
-      --color-headline: var(--palette-fountain-blue);
-      --color-background: var(--palette-cloudy);
-      --color-background-alt: var(--palette-overcast);
-      --color-label-text: var(--palette-marigold);
-      --color-body-text: var(--palette-wedgewood);
-      --color-accent:  var(--palette-crowshead);
-      --color-accent-alt:  var(--palette-marigold);
-      --color-error-text: var(--color-accent-alt);
+      --palette-primary-light: #C8E6C9;
+      --palette-primary-light-on: #151414;
+      --palette-primary: #66BB6A;
+      --palette-primary-on: #151414;
+      --palette-primary-dark: #388E3C;
+      --palette-primary-dark-on: #eef2f1;
+      --palette-secondary-light: #BCAAA4;
+      --palette-secondary-light-on: #151414;
+      --palette-secondary: #795548;
+      --palette-secondary-on: #eef2f1;
+      --palette-secondary-dark: #4E342E;
+      --palette-secondary-dark-on: #eef2f1;
+      --palette-background-light: #FAFAFA;
+      --palette-background-light-on: #151414;
+      --palette-background: #EEEEEE;
+      --palette-background-on: #151414;
+      --palette-background-dark: #CACACA;
+      --palette-background-dark-on: #151414;      
+      --palette-success: #8BC34A;
+      --palette-success-on: #151414;
+      --palette-error: #D84315;
+      --palette-error-on: #eef2f1;
+      --palette-info: #FDD835;
+      --palette-info-on: #151414;
 
       --font-size-body-text: 1rem;
       --font-size-aside-text: 0.8rem;

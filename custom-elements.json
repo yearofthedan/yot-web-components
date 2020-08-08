@@ -42,15 +42,15 @@
           "type": "unit"
         },
         {
-          "name": "--color-background",
+          "name": "--palette-primary",
           "type": "color"
         },
         {
-          "name": "--color-background-alt",
+          "name": "--palette-primary-light",
           "type": "color"
         },
         {
-          "name": "--color-accent",
+          "name": "--palette-primary-light-on",
           "type": "color"
         }
       ]
@@ -108,29 +108,25 @@
           "type": "unit"
         },
         {
-          "name": "--color-label-text",
+          "name": "--palette-background-light",
           "type": "color"
         },
         {
-          "name": "--color-accent",
+          "name": "--palette-primary-dark",
           "type": "color"
         },
         {
-          "name": "--color-background",
+          "name": "--palette-background",
           "type": "color"
         },
         {
-          "name": "--color-background-alt",
+          "name": "--palette-background-on",
           "type": "color"
         },
         {
-          "name": "--color-body-text",
+          "name": "--palette-error",
           "type": "color"
         },
-        {
-          "name": "--color-error-text",
-          "type": "color"
-        }
       ]
     }
   ]

@@ -31,7 +31,7 @@ export class YotField extends LitElement {
     :host {
       display: block;
       font-size: var(--font-size-body-text);
-      background-color: var(--color-background);
+      background-color: var(--palette-background-light);
     }
 
     input:not(:focus):placeholder-shown + label {
@@ -41,7 +41,7 @@ export class YotField extends LitElement {
     }
 
     label {
-      color: var(--color-label-text);
+      color: var(--palette-primary-dark);
       font-size: var(--font-size-label-text);
       transition: all ease-in 100ms;
       font-family: inherit;
@@ -49,9 +49,9 @@ export class YotField extends LitElement {
 
     input {
       border: none;
-      border-bottom: solid 1px var(--color-accent);
-      background-color: var(--color-background);
-      color: var(--color-body-text);
+      border-bottom: solid 1px var(--palette-primary-dark);
+      background-color: var(--palette-background);
+      color: var(--palette-background-on);
       font-size: var(--font-size-body-text);
       padding-top: calc(var(--font-size-aside-text) + 2 * var(--padding-unit));
       padding-bottom: var(--padding-unit);
@@ -59,11 +59,11 @@ export class YotField extends LitElement {
 
     input:focus {
       outline: none;
-      border-bottom: solid 2px var(--color-body-text);
+      border-bottom: solid 2px var(--palette-primary-dark);
     }
 
     input:not(:focus):placeholder-shown {
-      background-color: var(--color-background-alt);
+      background-color: var(--palette-background);
     }
 
     input::placeholder {
@@ -83,7 +83,7 @@ export class YotField extends LitElement {
       display: inline-block;
       padding: var(--padding-unit);
       font-size: var(--font-size-aside-text);
-      color: var(--color-error-text);
+      color: var(--palette-error);
     }
   `;
 
@@ -100,7 +100,7 @@ export class YotField extends LitElement {
   placeholder = ' ';
 
   @property()
-  id?: string;
+  id = '';
 
   render() {
     return html`
