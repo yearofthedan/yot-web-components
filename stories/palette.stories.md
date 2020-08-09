@@ -48,7 +48,7 @@ export const Palette = () => html`
       grid-row-gap: 4px;
       grid-column-gap: 4px;
       width: fit-content;
-      list-style-none;
+      list-style: none;
     }
     li {
       width: 150px;
