@@ -12,7 +12,8 @@
     "format": "npm run format:eslint && npm run format:prettier",
     "build": "rimraf dist && tsc && rollup -c rollup.config.js",
     "start:build": "npm run build && es-dev-server --root-dir . --app-index demo/index.html --open --compatibility none",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "test": "echo next up"
   },
   "dependencies": {
     "lit-element": "^2.2.1",
