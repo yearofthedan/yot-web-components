@@ -1,0 +1,133 @@
+{
+  "version": 2,
+  "tags": [
+    {
+      "name": "yot-button",
+      "description": "A button component",
+      "properties": [
+        {
+          "name": "type",
+          "type": "String",
+          "description": "The type of button",
+          "default": "normal"
+        },
+        {
+          "name": "state",
+          "type": "String",
+          "description": "The action state of the button",
+          "default": "idle"
+        }
+      ],
+      "events": [],
+      "slots": [],
+      "cssProperties": [
+        {
+          "name": "--base-unit",
+          "description": "Base unit",
+          "type": "unit"
+        },
+        {
+          "name": "--padding-unit",
+          "description": "Unit of padding",
+          "type": "unit"
+        },
+        {
+          "name": "--font-size-body-text",
+          "description": "",
+          "type": "unit"
+        },
+        {
+          "name": "--font-size-label-text",
+          "description": "",
+          "type": "unit"
+        },
+        {
+          "name": "--palette-primary",
+          "type": "color"
+        },
+        {
+          "name": "--palette-primary-light",
+          "type": "color"
+        },
+        {
+          "name": "--palette-primary-light-on",
+          "type": "color"
+        }
+      ]
+    },
+    {
+      "name": "yot-field",
+      "description": "An field component",
+      "properties": [
+        {
+          "name": "value",
+          "type": "String",
+          "description": "The current field value",
+          "default": ""
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "description": "The input field type",
+          "default": "text"
+        },
+        {
+          "name": "error",
+          "type": "String",
+          "description": "Any error message",
+          "default": ""
+        },
+        {
+          "name": "placeholder",
+          "type": "String",
+          "description": " ",
+          "default": " "
+        }
+      ],
+      "events": [],
+      "slots": [],
+      "cssProperties": [
+        {
+          "name": "--padding-unit",
+          "description": "Unit of padding",
+          "type": "unit"
+        },
+        {
+          "name": "--font-size-aside-text",
+          "description": "",
+          "type": "unit"
+        },
+        {
+          "name": "--font-size-body-text",
+          "description": "",
+          "type": "unit"
+        },
+        {
+          "name": "--font-size-label-text",
+          "description": "",
+          "type": "unit"
+        },
+        {
+          "name": "--palette-background-light",
+          "type": "color"
+        },
+        {
+          "name": "--palette-primary-dark",
+          "type": "color"
+        },
+        {
+          "name": "--palette-background",
+          "type": "color"
+        },
+        {
+          "name": "--palette-background-on",
+          "type": "color"
+        },
+        {
+          "name": "--palette-error",
+          "type": "color"
+        },
+      ]
+    }
+  ]
+}
