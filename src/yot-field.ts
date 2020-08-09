@@ -108,7 +108,7 @@ export class YotField extends LitElement {
         type="${this.type}"
         placeholder="${this.placeholder}"
         part="input"
-        value="${this.value}"
+        .value="${this.value}"
         id="${this.id}"
       />
       <label for="${this.id}">

@@ -8,6 +8,8 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    '@open-wc/eslint-config',
+    'eslint-config-prettier',
   ],
   rules: {
     // disable the rule for all files
@@ -17,4 +19,5 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/extensions': ['error', 'always', { ignorePackages: true }],
   },
+  ignorePatterns: ['/storybook-static/*', '/dist/*'],
 };
