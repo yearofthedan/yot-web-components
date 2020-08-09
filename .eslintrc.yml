@@ -4,6 +4,7 @@ plugins:
     - '@typescript-eslint'
     - 'import'
     - 'html'
+    - 'jest'
 extends:
     - 'eslint:recommended'
     - 'plugin:@typescript-eslint/eslint-recommended'
@@ -21,3 +22,10 @@ rules:
         - error
         - always
         - ignorePackages: true
+    import/no-extraneous-dependencies:
+        - error
+        - devDependencies:
+            - "**/*.spec.ts"
+            - "src/test-setup/*"
+env:
+    "jest/globals": true

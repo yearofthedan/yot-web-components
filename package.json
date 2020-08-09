@@ -13,18 +13,24 @@
     "build": "rimraf dist && tsc && rollup -c rollup.config.js",
     "start:build": "npm run build && es-dev-server --root-dir . --app-index demo/index.html --open --compatibility none",
     "semantic-release": "semantic-release --branches main",
-    "test": "echo next up"
+    "test": "jest"
   },
   "dependencies": {
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.11.0",
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
     "@open-wc/building-rollup": "^1.0.0",
     "@open-wc/demoing-storybook": "^2.0.0",
     "@open-wc/eslint-config": "^2.0.0",
+    "@open-wc/testing-helpers": "^1.8.6",
+    "@testing-library/dom": "^7.22.0",
+    "@testing-library/jest-dom": "^5.11.2",
+    "@testing-library/user-event": "^12.1.1",
+    "@types/jest": "^26.0.9",
     "@typescript-eslint/eslint-plugin": "^2.20.0",
     "@typescript-eslint/parser": "^2.20.0",
     "babel-loader": "^8.1.0",
@@ -32,7 +38,9 @@
     "es-dev-server": "^1.23.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jest": "^23.20.0",
     "husky": "^1.0.0",
+    "jest": "^26.2.2",
     "lint-staged": "^10.0.0",
     "prettier": "^2.0.4",
     "react": "^16.13.1",
@@ -41,6 +49,8 @@
     "rimraf": "^2.6.3",
     "rollup": "^2.3.4",
     "semantic-release": "^17.1.1",
+    "testing-library__dom": "^7.20.1-beta.1",
+    "ts-jest": "^26.1.4",
     "tslib": "^1.11.0",
     "typescript": "~3.8.2",
     "webpack": "^4.44.1"
