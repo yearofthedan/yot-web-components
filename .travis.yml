@@ -1,5 +1,13 @@
 language: node_js
 node_js:
   - "14"
-script:
-  - yarn lint
+jobs:
+  include:
+    - stage: test
+      script: yarn lint
+    - stage: release
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
