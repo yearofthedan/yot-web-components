@@ -33,20 +33,21 @@ export const Normal = () => html`
     ${styles}  
   </style>
   <form>
-    <yot-field id="text">text</yot-field>
-    <yot-field id="text" value="something">prefilled</yot-field>
-    <yot-field id="password" type="password">password</yot-field>
-    <yot-field id="phone" type="tel" placeholder="include the area code">phone</yot-field>
-    <yot-field id="email" type="email">email</yot-field>
-    <yot-field id="number" type="number">number</yot-field>
-    <yot-field id="datetime-local" type="datetime-local">time and date</yot-field>
-    <yot-field id="date" type="date">date</yot-field>
-    <yot-field id="time" type="time">time</yot-field>
-    <yot-field id="month" type="month">month</yot-field>
-    <yot-field id="week" type="week">week</yot-field>
-    <yot-field id="checkbox" type="checkbox">agreed?</yot-field>
-    <yot-field id="radio" type="radio">agreed?</yot-field>
-    <yot-field id="range" type="range">range</yot-field>
+    <yot-field id="text" label="text"></yot-field>
+    <yot-field id="prefilled" value="something" label="prefilled"></yot-field>
+    <yot-field id="password" type="password" label="password"></yot-field>
+    <yot-field id="phone" type="tel" label="phone" placeholder="include the area code"></yot-field>
+    <yot-field id="email" type="email" label="email"></yot-field>
+    <yot-field id="number" type="number" label="number"></yot-field>
+    <yot-field id="datetime-local" type="datetime-local" label="datetime-local"></yot-field>
+    <yot-field id="date" type="date" label="date"></yot-field>
+    <yot-field id="time" type="time" label="time"></yot-field>
+    <yot-field id="month" type="month" label="month"></yot-field>
+    <yot-field id="week" type="week" label="week"></yot-field>
+    <yot-field id="checkbox" type="checkbox" label="checkbox"></yot-field>
+    <yot-field id="radio" type="radio" label="radio"></yot-field>
+    <yot-field id="range" type="range" label="range"></yot-field>
+  
   </form>
 `;
 
@@ -55,19 +56,23 @@ export const Error = () => html`
     ${styles}
   </style>
   <form>
-    <yot-field id="date" type="date" error="⚠ date cannot be in the past!">date</yot-field>
+    <yot-field id="date" type="date" error="⚠ date cannot be in the past!" label="date"></yot-field>
     <div style="width: 200px;">
-      <yot-field id="date" type="date" error="⚠ date cannot be in the past!">date</yot-field>
+      <yot-field id="date" type="date" error="⚠ date cannot be in the past!" label="date"></yot-field>
     </div>
   </form>
 
 `;
 
+function onsubmit(e) {
+e.preventDefault();
+console.log(Array.from(e.target.elements).map(e => e.value));
+}
+
 export const Example = () => html`
-  <form onsubmit="return false;">
-    <yot-field id="text">text</yot-field>
-    <yot-button type="submit" id="text">text</yot-button>
-<button type="submit"></button>
+  <form @submit="${onsubmit}">
+    <yot-field id="field-id" label="name"></yot-field>
+    <yot-button type="submit" id="text">text</yot-button></yot-field>
   </form>
 `;
 ```

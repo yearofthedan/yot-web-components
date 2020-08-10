@@ -94,7 +94,13 @@ export class YotField extends LitElement {
   type = 'text';
 
   @property()
-  error: string | null = null;
+  name = '';
+
+  @property()
+  error?: string;
+
+  @property()
+  label?: string;
 
   @property()
   placeholder = ' ';
@@ -102,25 +108,44 @@ export class YotField extends LitElement {
   @property()
   id = '';
 
+  hiddenInputRef: HTMLInputElement | null = null;
+
+  setValueToHiddenInput(value: string | null) {
+    if (!this.ownerDocument) {
+      return;
+    }
+
+    if (this.hiddenInputRef === null) {
+      const hiddenInput = this.ownerDocument.createElement('input');
+      hiddenInput.type = 'hidden';
+      this.appendChild(hiddenInput);
+      this.hiddenInputRef = hiddenInput;
+    }
+
+    this.hiddenInputRef.name = this.name;
+    this.hiddenInputRef.value = value ?? '';
+  }
+
+  __inputChanged(e: InputEvent) {
+    this.setValueToHiddenInput((e.target as HTMLInputElement).value);
+  }
+
   render() {
+    this.setValueToHiddenInput(this.value);
     return html`
       <input
+        id="input-${this.id}"
+        name="${this.name}"
         type="${this.type}"
-        placeholder="${this.placeholder}"
-        part="input"
         .value="${this.value}"
-        id="${this.id}"
+        placeholder="${this.placeholder}"
+        @input="${this.__inputChanged}"
+        part="input"
       />
-      <label for="${this.id}">
-        <slot></slot>
-      </label>
-      ${this.error ? html`<aside aria-role="alert">${this.error}</aside>` : ''}
+      ${this.label
+        ? html`<label for="input-${this.id}">${this.label}</label>`
+        : ''}
+      ${this.error ? html`<aside role="alert">${this.error}</aside>` : ''}
     `;
-  }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'yot-field': YotField;
   }
 }

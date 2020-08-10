@@ -5,7 +5,10 @@ import userEvent from '@testing-library/user-event';
 
 describe('yot-button', () => {
   it('submits a form when type is submit', async () => {
-    const submitMock = jest.fn().mockReturnValue(false);
+    const submitMock = jest.fn().mockImplementation((event: Event) => {
+      event.preventDefault();
+    });
+
     await fixture(
       html`<form @submit="${submitMock}">
         <yot-button type="submit"></yot-button>
@@ -26,5 +29,11 @@ describe('yot-button', () => {
     userEvent.click(screen.getByRole('button'));
 
     expect(submitMock).not.toHaveBeenCalled();
+  });
+
+  it('renders the button text', async () => {
+    await fixture(html`<yot-button>Continue</yot-button>`);
+
+    expect(screen.getByText('Continue')).toBeDefined();
   });
 });
