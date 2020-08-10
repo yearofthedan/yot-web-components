@@ -62,4 +62,12 @@ export const Error = () => html`
   </form>
 
 `;
+
+export const Example = () => html`
+  <form onsubmit="return false;">
+    <yot-field id="text">text</yot-field>
+    <yot-button type="submit" id="text">text</yot-button>
+<button type="submit"></button>
+  </form>
+`;
 ```

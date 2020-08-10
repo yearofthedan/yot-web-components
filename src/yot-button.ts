@@ -104,12 +104,27 @@ export class YotButton extends LitElement {
   @property()
   type = 'normal';
 
+  __click(event: Event) {
+    if (this.type === 'submit') {
+      const form = this.closest('form');
+      event.preventDefault();
+      const fakeSubmit = document.createElement('button');
+      fakeSubmit.type = 'submit';
+      fakeSubmit.style.display = 'none';
+      form?.appendChild(fakeSubmit);
+      fakeSubmit.click();
+      fakeSubmit.remove();
+    }
+  }
+
   render() {
     return html`
       <button
         part="button"
         data-action-state="${this.state}"
         ?disabled="${this.state !== STATE.idle}"
+        type="${this.type}"
+        @click="${this.__click}"
       >
         <slot name="loading" part="loading">
           <span></span>

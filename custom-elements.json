@@ -126,7 +126,7 @@
         {
           "name": "--palette-error",
           "type": "color"
-        },
+        }
       ]
     }
   ]
