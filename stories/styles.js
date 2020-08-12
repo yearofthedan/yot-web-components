@@ -39,8 +39,18 @@ const styles = `
       --font-size-aside-text: 0.8rem;
       --font-size-label-text: 0.75rem;
 
-      --padding-unit: 0.25rem;
+      --field-height: 2.25rem;
+
       --base-unit: 0.125rem;
+      --padding-unit: 0.25rem;
+      --spacing-unit: 0.25rem;
+      
+      --spacing-slight: calc(var(--spacing-unit) * 0.5);
+      --spacing-slender: calc(var(--spacing-unit) * 1);
+      --spacing-noticeable: calc(var(--spacing-unit) * 2);
+      --spacing-pronounced: calc(var(--spacing-unit) * 4);
+      --spacing-huge: calc(var(--spacing-unit) * 8);
+      
     }
 `;
 export default styles;
