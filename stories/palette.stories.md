@@ -17,8 +17,6 @@ The palette in use here and how they bind to the css vars
 ### Installation
 
 ```js preview-story
-import styles from './styles';
-
 const colors = [
   { name: 'primary-light', color: '#C8E6C9', on: '#151414' },
   { name: 'primary', color: '#66BB6A', on: '#151414' },
@@ -36,7 +34,6 @@ const colors = [
 
 export const Palette = () => html`
   <style>
-    ${styles}
     ul {
       display: grid;
       grid-template-areas: 
@@ -63,15 +60,15 @@ export const Palette = () => html`
     }
   </style>
   <ul>
-    ${colors.map(i => html`
-            <li
-                style="grid-area: ${i.name}; --color-bg: ${i.color}; --color-fg: ${i.on}" 
-            >
-              <div>${i.name}</div>
-              <div>${i.color}</div>
-              <div>${i.on}</div>
-            </li>
-        `)}
-  </section>
+      ${colors.map(i => html`
+              <li
+                  style="grid-area: ${i.name}; --color-bg: var(--palette-${i.name}); --color-fg: var(--palette-${i.name}-on)" 
+              >
+                <div>${i.name}</div>
+                <div>${i.color}</div>
+                <div>${i.on}</div>
+              </li>
+          `)}
+  </ul>
 `;
 ```

@@ -26,12 +26,7 @@ import 'yot-button/yot-button.js';
 ```
 
 ```js preview-story
-import styles from './styles';
-
 export const Normal = () => html`
-  <style>
-    ${styles}  
-  </style>
   <yot-button id="text">text</yot-button>
   <yot-button state="loading" id="text">text</yot-button>
   <yot-button state="success" id="text">text</yot-button>

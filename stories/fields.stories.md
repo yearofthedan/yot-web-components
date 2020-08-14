@@ -26,12 +26,7 @@ import 'yot-field/yot-field.js';
 ```
 
 ```js preview-story
-import styles from './styles';
-
 export const Normal = () => html`
-  <style>
-    ${styles}  
-  </style>
   <form>
     <yot-field id="text" label="text"></yot-field>
     <yot-field id="prefilled" value="something" label="prefilled"></yot-field>
@@ -52,9 +47,6 @@ export const Normal = () => html`
 `;
 
 export const Error = () => html`
-  <style>
-    ${styles}
-  </style>
   <form>
     <yot-field id="date" type="date" error="⚠ date cannot be in the past!" label="date"></yot-field>
     <div style="width: 200px;">

@@ -6,6 +6,7 @@ export class YotField extends LitElement {
     :host {
       position: relative;
       display: inline-block;
+      min-height: var(--field-height);
     }
 
     label {
@@ -23,9 +24,9 @@ export class YotField extends LitElement {
     }
 
     :host(:not(:focus-within)) > input:placeholder-shown + label {
-      position: absolute;
-      left: var(--padding-unit);
-      top: calc(var(--font-size-aside-text) + 2 * var(--padding-unit));
+      top: 50%;
+      transform: translateY(-50%);
+      left: var(--inset-density-xs);
     }
 
     :host {
@@ -53,8 +54,9 @@ export class YotField extends LitElement {
       background-color: var(--palette-background);
       color: var(--palette-background-on);
       font-size: var(--font-size-body-text);
-      padding-top: calc(var(--font-size-aside-text) + 2 * var(--padding-unit));
-      padding-bottom: var(--padding-unit);
+      padding-top: calc(
+        var(--font-size-aside-text) + 2 * var(--inset-density-xs)
+      );
     }
 
     input:focus {

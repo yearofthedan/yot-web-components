@@ -40,7 +40,7 @@ const loadingSpinner = css`
   }
 
   slot[part='loading'] > span {
-    --spinner-radius: calc(4 * var(--unit));
+    --spinner-radius: calc(0.25 * var(--field-height));
     display: block;
     color: var(--palette-primary-light-on);
     width: calc(2 * var(--spinner-radius));
@@ -57,19 +57,16 @@ const successIndicator = css`
   }
 
   slot[part='success'] > span {
-    --radius: calc(4 * var(--unit));
     display: block;
     color: var(--palette-primary-light-on);
-    width: calc(2 * var(--radius));
-    height: calc(2 * var(--radius));
     border-radius: 100%;
   }
 `;
 const buttonSpacing = css`
   button {
     box-sizing: border-box;
-    padding: var(--spacing-slender) var(--spacing-noticeable);
-    border: var(--spacing-slight) solid var(--palette-primary-light);
+    padding: var(--inset-density-m) var(--inset-density-l);
+    border: none;
     border-radius: 0.25rem;
   }
 
@@ -86,8 +83,8 @@ const buttonSpacing = css`
   }
 
   button:focus {
-    outline: var(--unit) solid;
-    outline-offset: var(--unit);
+    outline: var(--border-m) solid;
+    outline-offset: var(--inset-density-s);
   }
 `;
 
@@ -95,7 +92,6 @@ const buttonSpacing = css`
 export class YotButton extends LitElement {
   static styles = css`
     :host {
-      --unit: var(--base-unit, calc(1rem / 4));
       min-width: 8rem;
       width: fit-content;
       display: inline-block;
