@@ -32,12 +32,12 @@
           "type": "unit"
         },
         {
-          "name": "--font-size-body-text",
+          "name": "--font-size-s",
           "description": "",
           "type": "unit"
         },
         {
-          "name": "--font-size-label-text",
+          "name": "--font-size-xs",
           "description": "",
           "type": "unit"
         },
@@ -93,17 +93,17 @@
           "type": "unit"
         },
         {
-          "name": "--font-size-aside-text",
+          "name": "--font-size-xs",
           "description": "",
           "type": "unit"
         },
         {
-          "name": "--font-size-body-text",
+          "name": "--font-size-s",
           "description": "",
           "type": "unit"
         },
         {
-          "name": "--font-size-label-text",
+          "name": "--font-size-xs",
           "description": "",
           "type": "unit"
         },

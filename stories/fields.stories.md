@@ -27,7 +27,7 @@ import 'yot-field/yot-field.js';
 
 ```js preview-story
 export const Normal = () => html`
-  <form>
+  <form style="display: grid; grid-template-columns: fit-content; grid-row-gap: var(--stack-density-s)">
     <yot-field id="text" label="text"></yot-field>
     <yot-field id="prefilled" value="something" label="prefilled"></yot-field>
     <yot-field id="password" type="password" label="password"></yot-field>
@@ -42,7 +42,6 @@ export const Normal = () => html`
     <yot-field id="checkbox" type="checkbox" label="checkbox"></yot-field>
     <yot-field id="radio" type="radio" label="radio"></yot-field>
     <yot-field id="range" type="range" label="range"></yot-field>
-  
   </form>
 `;
 

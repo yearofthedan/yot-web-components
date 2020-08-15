@@ -5,8 +5,11 @@ export class YotField extends LitElement {
   static styles = css`
     :host {
       position: relative;
-      display: inline-block;
       min-height: var(--field-height);
+      display: inline-block;
+
+      font-size: var(--font-size-s);
+      background-color: var(--palette-background-light);
     }
 
     label {
@@ -29,21 +32,15 @@ export class YotField extends LitElement {
       left: var(--inset-density-xs);
     }
 
-    :host {
-      display: block;
-      font-size: var(--font-size-body-text);
-      background-color: var(--palette-background-light);
-    }
-
     input:not(:focus):placeholder-shown + label {
-      font-size: var(--font-size-body-text);
+      font-size: var(--font-size-s);
       cursor: text;
       transition: all ease-out 100ms;
     }
 
     label {
       color: var(--palette-primary-dark);
-      font-size: var(--font-size-label-text);
+      font-size: var(--font-size-xs);
       transition: all ease-in 100ms;
       font-family: inherit;
     }
@@ -53,10 +50,8 @@ export class YotField extends LitElement {
       border-bottom: solid 1px var(--palette-primary-dark);
       background-color: var(--palette-background);
       color: var(--palette-background-on);
-      font-size: var(--font-size-body-text);
-      padding-top: calc(
-        var(--font-size-aside-text) + 2 * var(--inset-density-xs)
-      );
+      font-size: var(--font-size-s);
+      padding-top: calc(var(--font-size-xs) + 2 * var(--inset-density-xs));
     }
 
     input:focus {
@@ -77,14 +72,14 @@ export class YotField extends LitElement {
       opacity: 1;
       transition: all ease-out 100ms;
       font-style: italic;
-      font-size: var(--font-size-aside-text);
+      font-size: var(--font-size-xs);
       padding-left: var(--padding-unit);
     }
 
-    aside {
+    [role='alert'] {
       display: inline-block;
       padding: var(--padding-unit);
-      font-size: var(--font-size-aside-text);
+      font-size: var(--font-size-xs);
       color: var(--palette-error);
     }
   `;
