@@ -1,6 +1,6 @@
 ```js script
 import { html } from '@open-wc/demoing-storybook';
-import '../build/buttons/yot-button.js';
+import '../dist/yot-button.js';
 
 export default {
   title: 'yot-button',

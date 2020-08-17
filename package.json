@@ -1,7 +1,7 @@
 {
   "name": "yot-web-components",
   "scripts": {
-    "storybook": "concurrently --kill-others --names tsc,storybook \"npm run tsc:watch\" \"start-storybook --node-resolve --watch --open\"",
+    "storybook": "concurrently --kill-others --names rollup,storybook \"npm run build:watch\" \"start-storybook --node-resolve --watch --open\"",
     "storybook:build": "build-storybook",
     "tsc:watch": "tsc --watch",
     "lint:eslint": "eslint --ext .ts,.html .",
@@ -10,7 +10,8 @@
     "format:prettier": "prettier \"**/*.js\" \"**/*.ts\" --write",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "format": "npm run format:eslint && npm run format:prettier",
-    "build": "rimraf dist && tsc && rollup -c rollup.config.js",
+    "build": "rimraf dist && rollup -c rollup.config.js",
+    "build:watch": "rimraf dist && rollup --watch -c rollup.config.js",
     "start:build": "npm run build && es-dev-server --root-dir . --app-index demo/index.html --open --compatibility none",
     "semantic-release": "semantic-release --branches main",
     "test": "jest"
@@ -27,6 +28,7 @@
     "@open-wc/demoing-storybook": "^2.0.0",
     "@open-wc/eslint-config": "^2.0.0",
     "@open-wc/testing-helpers": "^1.8.6",
+    "@rollup/plugin-typescript": "^5.0.2",
     "@testing-library/dom": "^7.22.0",
     "@testing-library/jest-dom": "^5.11.2",
     "@testing-library/user-event": "^12.1.1",
