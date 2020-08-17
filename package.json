@@ -50,6 +50,7 @@
     "react-styleguidist": "^11.0.8",
     "rimraf": "^2.6.3",
     "rollup": "^2.3.4",
+    "rollup-plugin-copy": "^3.3.0",
     "semantic-release": "^17.1.1",
     "testing-library__dom": "^7.20.1-beta.1",
     "ts-jest": "^26.1.4",

@@ -1,6 +1,7 @@
 import merge from 'deepmerge';
 import typescript from '@rollup/plugin-typescript';
 import { createBasicConfig } from '@open-wc/building-rollup';
+import copy from 'rollup-plugin-copy';
 
 const baseConfig = createBasicConfig();
 
@@ -12,6 +13,9 @@ export default merge(baseConfig, {
     sourcemap: true,
   },
   plugins: [
-    typescript()
-  ]
+    typescript(),
+    copy({
+      targets: [{ src: 'src/foundational/*.css', dest: 'dist/foundational' }],
+    }),
+  ],
 });
