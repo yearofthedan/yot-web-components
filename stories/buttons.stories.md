@@ -27,8 +27,8 @@ import 'yot-button/yot-button.js';
 
 ```js preview-story
 export const Normal = () => html`
-  <yot-button id="text">text</yot-button>
-  <yot-button state="loading" id="text">text</yot-button>
-  <yot-button state="success" id="text">text</yot-button>
+  <yot-button id="button1">continue</yot-button>
+  <yot-button id="button2" state="loading" id="text">continue</yot-button>
+  <yot-button id="button3" state="success" id="text">continue</yot-button>
 `;
 ```

@@ -1,19 +1,19 @@
-import JestMatchers = jest.JestMatchers;
-
-interface ExtendedMatchers extends JestMatchers<Promise<void>> {
-  toPassAxeTests: () => void;
+interface ExtendedMatchers extends jest.JestMatchers<Promise<void>> {
+  toPassAxeTests: (config?: object) => void;
 }
 
-describe('yot-button', () => {
+const path = `${global.BASE_URL}?id=yot-button--normal`;
+
+describe(path, () => {
   beforeAll(async () => {
-    await page.goto(
-      'http://localhost:4444/storybook-static?path=/story/yot-button--normal'
-    );
+    await page.goto(`${global.BASE_URL}?id=yot-button--normal`);
   });
 
   it('be accessible', async () => {
-    await (expect(page) as ExtendedMatchers).toPassAxeTests();
+    await expect(page).toMatch('continue');
 
-    await expect(page).toMatch('google');
+    await (expect(page) as ExtendedMatchers).toPassAxeTests({
+      include: 'yot-button',
+    });
   });
 });
