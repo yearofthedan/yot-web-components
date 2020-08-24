@@ -13,6 +13,8 @@ extends:
     - 'plugin:import/warnings'
     - '@open-wc/eslint-config'
     - 'eslint-config-prettier'
+globals:
+    page: true
 rules:
     '@typescript-eslint/explicit-function-return-type': off
     '@typescript-eslint/no-non-null-assertion': off
@@ -27,5 +29,6 @@ rules:
         - devDependencies:
             - "**/*.spec.ts"
             - "src/test-setup/*"
+            - "browser-tests/test-setup/*"
 env:
     "jest/globals": true

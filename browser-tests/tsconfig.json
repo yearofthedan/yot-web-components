@@ -1,4 +1,4 @@
-  {
+{
   "compilerOptions": {
     "target": "es2018",
     "module": "esnext",
@@ -12,9 +12,7 @@
     "importHelpers": true,
     "outDir": "dist",
     "sourceMap": true,
-    "inlineSources": true,
-    "rootDir": "./src"
+    "inlineSources": true
   },
-  "include": ["**/*.ts"],
-  "exclude": ["browser-tests"]
+  "include": ["**/*.ts"]
 }
