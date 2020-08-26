@@ -47,9 +47,9 @@ export const Normal = () => html`
 
 export const Error = () => html`
   <form>
-    <yot-field id="date" type="date" error="⚠ date cannot be in the past!" label="date"></yot-field>
+    <yot-field id="date1" type="date" error="⚠ date cannot be in the past!" label="date"></yot-field>
     <div style="width: 200px;">
-      <yot-field id="date" type="date" error="⚠ date cannot be in the past!" label="date"></yot-field>
+      <yot-field id="date2" type="date" error="⚠ date cannot be in the past!" label="date"></yot-field>
     </div>
   </form>
 

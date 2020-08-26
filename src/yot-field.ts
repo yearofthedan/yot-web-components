@@ -142,7 +142,7 @@ export class YotField extends LitElement {
       ${this.label
         ? html`<label for="input-${this.id}">${this.label}</label>`
         : ''}
-      ${this.error ? html`<aside role="alert">${this.error}</aside>` : ''}
+      ${this.error ? html`<span role="alert">${this.error}</span>` : ''}
     `;
   }
 }

@@ -3,7 +3,7 @@
     --palette-primary-light-on: #151414;
     --palette-primary: #66BB6A;
     --palette-primary-on: #151414;
-    --palette-primary-dark: #388E3C;
+    --palette-primary-dark: #2b792f;
     --palette-primary-dark-on: #eef2f1;
 
     --palette-secondary-light: #BCAAA4;
@@ -22,7 +22,7 @@
 
     --palette-success: #8BC34A;
     --palette-success-on: #151414;
-    --palette-error: #D84315;
+    --palette-error: #d81515;
     --palette-error-on: #eef2f1;
     --palette-info: #FDD835;
     --palette-info-on: #151414;

@@ -10,7 +10,7 @@ let t,e,i,o,a=t=>t;import{_ as n}from"./cd8cc21f.js";import{c as l,p as r,a as s
       />
       ${0}
       ${0}
-    `),this.id,this.name,this.type,this.value,this.placeholder,this.__inputChanged,this.label?d(e||(e=a`<label for="input-${0}">${0}</label>`),this.id,this.label):"",this.error?d(i||(i=a`<aside role="alert">${0}</aside>`),this.error):"")}};u.styles=l(o||(o=a`
+    `),this.id,this.name,this.type,this.value,this.placeholder,this.__inputChanged,this.label?d(e||(e=a`<label for="input-${0}">${0}</label>`),this.id,this.label):"",this.error?d(i||(i=a`<span role="alert">${0}</span>`),this.error):"")}};u.styles=l(o||(o=a`
     :host {
       position: relative;
       min-height: var(--field-height);

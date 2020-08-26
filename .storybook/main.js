@@ -3,6 +3,7 @@ module.exports = {
   addons: [
     'storybook-prebuilt/addon-knobs/register.js',
     'storybook-prebuilt/addon-docs/register.js',
+    'storybook-prebuilt/addon-a11y/register.js',
     'storybook-prebuilt/addon-viewport/register.js',
   ],
   esDevServer: {
