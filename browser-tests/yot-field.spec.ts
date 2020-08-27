@@ -1,7 +1,3 @@
-interface ExtendedMatchers extends jest.JestMatchers<Promise<void>> {
-  toPassAxeTests: (config?: object) => void;
-}
-
 const inputPath = `${global.BASE_URL}?id=yot-field--normal`;
 
 describe(inputPath, () => {
@@ -9,8 +5,16 @@ describe(inputPath, () => {
     await page.goto(inputPath);
     await page.waitForSelector('input');
 
-    await (expect(page) as ExtendedMatchers).toPassAxeTests({
+    await expect(page).toPassAxeTests({
       include: 'yot-field',
     });
+  });
+
+  it('should not visually regress', async () => {
+    await page.goto(inputPath);
+
+    const image = await page.screenshot();
+
+    expect(image).toMatchImageSnapshot();
   });
 });

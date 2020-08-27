@@ -3,3 +3,9 @@ declare namespace NodeJS {
     BASE_URL: string;
   }
 }
+
+declare namespace jest {
+  interface Matchers<R> {
+    toPassAxeTests(config: object): R;
+  }
+}

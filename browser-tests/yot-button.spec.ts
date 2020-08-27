@@ -1,15 +1,19 @@
-interface ExtendedMatchers extends jest.JestMatchers<Promise<void>> {
-  toPassAxeTests: (config?: object) => void;
-}
-
 const buttonPath = `${global.BASE_URL}?id=yot-button--normal`;
 
 describe(buttonPath, () => {
   it('should be accessible', async () => {
     await page.goto(buttonPath);
 
-    await (expect(page) as ExtendedMatchers).toPassAxeTests({
+    await expect(page).toPassAxeTests({
       include: 'yot-button',
     });
+  });
+
+  it('should not visually regress', async () => {
+    await page.goto(buttonPath);
+
+    const image = await page.screenshot();
+
+    expect(image).toMatchImageSnapshot();
   });
 });
