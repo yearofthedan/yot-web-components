@@ -1,8 +1,8 @@
-const buttonPath = `${global.BASE_URL}?id=yot-button--normal`;
+describe('yot-button', () => {
+  const url = `${global.BASE_URL}?id=yot-button--normal`;
 
-describe(buttonPath, () => {
   it('should be accessible', async () => {
-    await page.goto(buttonPath);
+    await page.goto(url);
 
     await expect(page).toPassAxeTests({
       include: 'yot-button',
@@ -10,7 +10,7 @@ describe(buttonPath, () => {
   });
 
   it('should not visually regress', async () => {
-    await page.goto(buttonPath);
+    await page.goto(url);
 
     const image = await page.screenshot();
 

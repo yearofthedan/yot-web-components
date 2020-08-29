@@ -1,20 +1,30 @@
 import './yot-field.ts';
-import { screen } from 'testing-library__dom';
+import { screen, within } from '@testing-library/dom';
 import { fixture, html } from '@open-wc/testing-helpers';
 import userEvent from '@testing-library/user-event';
+
+const getShadowedElement = (selector: string) => {
+  const shadowedComponent = document.querySelector(selector);
+
+  return within((shadowedComponent?.shadowRoot as unknown) as HTMLElement);
+};
 
 describe('yot-field', () => {
   it('renders an underlying input', async () => {
     await fixture('<yot-field></yot-field>');
 
-    expect(screen.getByRole('textbox')).toBeDefined();
+    const { getByRole } = getShadowedElement('yot-field');
+
+    expect(getByRole('textbox')).toBeDefined();
   });
 
   it('can select the input from the label', async () => {
     await fixture('<yot-field id="field-id" label="Your Name"></yot-field>');
 
-    await userEvent.type(screen.getByLabelText('Your Name'), 'Hello world');
-    expect(screen.getByRole('textbox')).toHaveValue('Hello world');
+    const { getByLabelText, getByRole } = getShadowedElement('yot-field');
+
+    await userEvent.type(getByLabelText('Your Name'), 'Hello world');
+    expect(getByRole('textbox')).toHaveValue('Hello world');
   });
 
   it('supports defining the type of input', async () => {
@@ -22,13 +32,17 @@ describe('yot-field', () => {
       '<yot-field id="field-id" label="No thanks!" type="radio"></yot-field>'
     );
 
-    expect(screen.getByRole('radio')).toBeDefined();
+    const { getByRole } = getShadowedElement('yot-field');
+
+    expect(getByRole('radio')).toBeDefined();
   });
 
   it('defaults to a text input', async () => {
     await fixture('<yot-field id="field-id" label="No thanks!"></yot-field>');
 
-    expect(screen.getByRole('textbox')).toBeDefined();
+    const { getByRole } = getShadowedElement('yot-field');
+
+    expect(getByRole('textbox')).toBeDefined();
   });
 
   it('displays an error message if one is provided', async () => {
@@ -36,7 +50,9 @@ describe('yot-field', () => {
       '<yot-field id="field-id" error="Dodgy value there!"></yot-field>'
     );
 
-    expect(screen.getByRole('alert')).toHaveTextContent('Dodgy value there!');
+    const { getByRole } = getShadowedElement('yot-field');
+
+    expect(getByRole('alert')).toHaveTextContent('Dodgy value there!');
   });
 
   it('hands its values to a form when the form is submitted', async () => {
@@ -62,8 +78,10 @@ describe('yot-field', () => {
       `
     );
 
-    await userEvent.clear(screen.getByLabelText('Your Name'));
-    await userEvent.type(screen.getByLabelText('Your Name'), 'Hello world');
+    const { getByLabelText } = getShadowedElement('yot-field');
+
+    await userEvent.clear(getByLabelText('Your Name'));
+    await userEvent.type(getByLabelText('Your Name'), 'Hello world');
     await userEvent.click(screen.getByRole('button'));
 
     expect(valueCallback).toHaveBeenCalledWith('Hello world');

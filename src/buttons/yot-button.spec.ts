@@ -1,7 +1,13 @@
 import './yot-button.ts';
-import { screen } from 'testing-library__dom';
+import { within } from '@testing-library/dom';
 import { fixture, html } from '@open-wc/testing-helpers';
 import userEvent from '@testing-library/user-event';
+
+const getShadowedElement = (selector: string) => {
+  const shadowedComponent = document.querySelector(selector);
+
+  return within((shadowedComponent?.shadowRoot as unknown) as HTMLElement);
+};
 
 describe('yot-button', () => {
   it('submits a form when type is submit', async () => {
@@ -15,7 +21,8 @@ describe('yot-button', () => {
       </form>`
     );
 
-    userEvent.click(screen.getByRole('button'));
+    const { getByRole } = getShadowedElement('yot-button');
+    userEvent.click(getByRole('button'));
 
     expect(submitMock).toHaveBeenCalled();
   });
@@ -26,14 +33,9 @@ describe('yot-button', () => {
       html`<form @submit="${submitMock}"><yot-button></yot-button></form>`
     );
 
-    userEvent.click(screen.getByRole('button'));
+    const { getByRole } = getShadowedElement('yot-button');
+    userEvent.click(getByRole('button'));
 
     expect(submitMock).not.toHaveBeenCalled();
-  });
-
-  it('renders the button text', async () => {
-    await fixture(html`<yot-button>Continue</yot-button>`);
-
-    expect(screen.getByText('Continue')).toBeDefined();
   });
 });

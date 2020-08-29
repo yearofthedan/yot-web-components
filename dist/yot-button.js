@@ -1,13 +1,4 @@
-let t,e,a,i,s,o,n,r=t=>t;import{_ as l}from"./cd8cc21f.js";import{c as d,p as c,a as p,L as u,h as m}from"./lit-element.js";var b;!function(t){t.idle="idle",t.success="success",t.loading="loading"}(b||(b={}));const y=d(t||(t=r`
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-`)),f=d(e||(e=r`
+let t,e,i,s,a,o=t=>t;import{_ as n}from"./cd8cc21f.js";import{c as r,p as l,a as d,L as c,h as p}from"./lit-element.js";import"./yot-spinner.js";var u;!function(t){t.idle="idle",t.success="success",t.loading="loading"}(u||(u={}));const y=r(t||(t=o`
   button {
     font-family: var(--font-family-body);
     font-size: var(--font-size-small);
@@ -22,22 +13,7 @@ let t,e,a,i,s,o,n,r=t=>t;import{_ as l}from"./cd8cc21f.js";import{c as d,p as c,
   button[yot-size='large'] {
     font-size: var(--font-size-large);
   }
-`)),h=d(a||(a=r`
-  button[data-action-state='loading'] > slot[part='loading'] {
-    display: inline;
-  }
-
-  slot[part='loading'] > span {
-    --spinner-radius: calc(0.25 * var(--field-height));
-    display: block;
-    color: var(--palette-primary-light-on);
-    width: calc(2 * var(--spinner-radius));
-    height: calc(2 * var(--spinner-radius));
-    border-top: 2px solid var(--palette-primary-light-on);
-    animation: 2s rotate linear infinite;
-    border-radius: 100%;
-  }
-`)),g=d(i||(i=r`
+`)),b=r(e||(e=o`
   button[data-action-state='success'] > slot[part='success'] {
     display: inline;
   }
@@ -47,7 +23,7 @@ let t,e,a,i,s,o,n,r=t=>t;import{_ as l}from"./cd8cc21f.js";import{c as d,p as c,
     color: var(--palette-primary-light-on);
     border-radius: 100%;
   }
-`)),v=d(s||(s=r`
+`)),m=r(i||(i=o`
   button {
     box-sizing: border-box;
     padding: var(--inset-density-m) var(--inset-density-l);
@@ -71,7 +47,7 @@ let t,e,a,i,s,o,n,r=t=>t;import{_ as l}from"./cd8cc21f.js";import{c as d,p as c,
     outline: var(--border-m) solid;
     outline-offset: var(--inset-density-s);
   }
-`));let z=class extends u{constructor(){super(...arguments),this.state=b.idle,this.type="normal",this.variant="primary"}__click(t){if("submit"===this.type){const e=this.closest("form");t.preventDefault();const a=document.createElement("button");a.type="submit",a.style.display="none",null==e||e.appendChild(a),a.click(),a.remove()}}render(){return m(o||(o=r`
+`));let f=class extends c{constructor(){super(...arguments),this.state=u.idle,this.type="normal",this.variant="primary"}__click(t){if("submit"===this.type){const e=this.closest("form");t.preventDefault();const i=document.createElement("button");i.type="submit",i.style.display="none",null==e||e.appendChild(i),i.click(),i.remove()}}render(){return p(s||(s=o`
       <button
         part="button"
         data-action-state="${0}"
@@ -80,23 +56,21 @@ let t,e,a,i,s,o,n,r=t=>t;import{_ as l}from"./cd8cc21f.js";import{c as d,p as c,
         @click="${0}"
       >
         <slot name="loading" part="loading">
-          <span></span>
+          <yot-spinner></yot-spinner>
         </slot>
         <slot name="success" part="success">
           <span>✔</span>
         </slot>
-        <slot part="label">
-          My label text
-        </slot>
+        <slot part="label"> </slot>
       </button>
-    `),this.state,this.state!==b.idle,this.type,this.__click)}};z.styles=d(n||(n=r`
+    `),this.state,this.state!==u.idle,this.type,this.__click)}};f.styles=r(a||(a=o`
     :host {
       min-width: 8rem;
       width: fit-content;
       display: inline-block;
       position: relative;
     }
-    
+
     ${0}
     ${0}
 
@@ -111,7 +85,11 @@ let t,e,a,i,s,o,n,r=t=>t;import{_ as l}from"./cd8cc21f.js";import{c as d,p as c,
       align-items: center;
       transition: background 200ms;
     }
-    
+
+    button[data-action-state='loading'] > slot[part='loading'] {
+      display: flex;
+    }
+
     button[disabled] {
       background-color: var(--palette-primary-light);
     }
@@ -126,7 +104,7 @@ let t,e,a,i,s,o,n,r=t=>t;import{_ as l}from"./cd8cc21f.js";import{c as d,p as c,
       filter: brightness(80%);
       transition: filter 100ms;
     }
-    
+
     slot {
       display: none;
     }
@@ -136,7 +114,5 @@ let t,e,a,i,s,o,n,r=t=>t;import{_ as l}from"./cd8cc21f.js";import{c as d,p as c,
     }
 
     ${0}
-    ${0}
-    ${0}
-  `),f,v,h,g,y),l([c()],z.prototype,"state",void 0),l([c()],z.prototype,"type",void 0),l([c()],z.prototype,"variant",void 0),z=l([p("yot-button")],z);
+  `),y,m,b),n([l()],f.prototype,"state",void 0),n([l()],f.prototype,"type",void 0),n([l()],f.prototype,"variant",void 0),f=n([d("yot-button")],f);
 //# sourceMappingURL=yot-button.js.map

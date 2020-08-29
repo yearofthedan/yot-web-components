@@ -6,7 +6,12 @@ import copy from 'rollup-plugin-copy';
 const baseConfig = createBasicConfig();
 
 export default merge(baseConfig, {
-  input: ['./src/buttons/yot-button.ts', './src/yot-field.ts', 'lit-element'],
+  input: [
+    './src/buttons/yot-button.ts',
+    './src/yot-field.ts',
+    './src/indicators/yot-spinner.ts',
+    'lit-element',
+  ],
   output: {
     dir: './dist',
     entryFileNames: '[name].js',

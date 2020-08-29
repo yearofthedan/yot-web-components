@@ -1,4 +1,9 @@
-import { addParameters, setCustomElements, withA11y, addDecorator } from '@open-wc/demoing-storybook';
+import {
+  addParameters,
+  setCustomElements,
+  withA11y,
+  addDecorator,
+} from '@open-wc/demoing-storybook';
 
 addDecorator(withA11y);
 

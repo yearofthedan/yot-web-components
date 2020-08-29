@@ -1,12 +1,11 @@
-describe('yot-field', () => {
-  const url = `${global.BASE_URL}?id=yot-field--normal`;
+describe('yot-spinner', () => {
+  const url = `${global.BASE_URL}?id=yot-spinner--normal`;
 
   it('should be accessible', async () => {
     await page.goto(url);
-    await page.waitForSelector('input');
 
     await expect(page).toPassAxeTests({
-      include: 'yot-field',
+      include: 'yot-spinner',
     });
   });
 

@@ -1,21 +1,11 @@
 import { LitElement, html, customElement, property, css } from 'lit-element';
+import '../indicators/yot-spinner.ts';
 
 enum STATE {
   idle = 'idle',
   success = 'success',
   loading = 'loading',
 }
-
-const rotateKeyframe = css`
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-`;
 
 const buttonTypeface = css`
   button {
@@ -34,23 +24,6 @@ const buttonTypeface = css`
   }
 `;
 
-const loadingSpinner = css`
-  button[data-action-state='loading'] > slot[part='loading'] {
-    display: inline;
-  }
-
-  slot[part='loading'] > span {
-    --spinner-radius: calc(0.25 * var(--field-height));
-    display: block;
-    color: var(--palette-primary-light-on);
-    width: calc(2 * var(--spinner-radius));
-    height: calc(2 * var(--spinner-radius));
-    border-top: 2px solid var(--palette-primary-light-on);
-    animation: 2s rotate linear infinite;
-    border-radius: 100%;
-  }
-`;
-
 const successIndicator = css`
   button[data-action-state='success'] > slot[part='success'] {
     display: inline;
@@ -62,6 +35,7 @@ const successIndicator = css`
     border-radius: 100%;
   }
 `;
+
 const buttonSpacing = css`
   button {
     box-sizing: border-box;
@@ -97,7 +71,7 @@ export class YotButton extends LitElement {
       display: inline-block;
       position: relative;
     }
-    
+
     ${buttonTypeface}
     ${buttonSpacing}
 
@@ -112,7 +86,11 @@ export class YotButton extends LitElement {
       align-items: center;
       transition: background 200ms;
     }
-    
+
+    button[data-action-state='loading'] > slot[part='loading'] {
+      display: flex;
+    }
+
     button[disabled] {
       background-color: var(--palette-primary-light);
     }
@@ -127,7 +105,7 @@ export class YotButton extends LitElement {
       filter: brightness(80%);
       transition: filter 100ms;
     }
-    
+
     slot {
       display: none;
     }
@@ -136,9 +114,7 @@ export class YotButton extends LitElement {
       display: inline;
     }
 
-    ${loadingSpinner}
     ${successIndicator}
-    ${rotateKeyframe}
   `;
 
   @property()
@@ -173,14 +149,12 @@ export class YotButton extends LitElement {
         @click="${this.__click}"
       >
         <slot name="loading" part="loading">
-          <span></span>
+          <yot-spinner></yot-spinner>
         </slot>
         <slot name="success" part="success">
           <span>✔</span>
         </slot>
-        <slot part="label">
-          My label text
-        </slot>
+        <slot part="label"> </slot>
       </button>
     `;
   }
