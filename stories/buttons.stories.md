@@ -28,7 +28,15 @@ import 'yot-button/yot-button.js';
 ```js preview-story
 export const Normal = () => html`
   <yot-button id="button1">continue</yot-button>
-  <yot-button id="button2" state="loading" id="text">continue</yot-button>
-  <yot-button id="button3" state="success" id="text">continue</yot-button>
+  <yot-button id="button2" state="loading">continue</yot-button>
+  <yot-button id="button3" state="success">continue</yot-button>
+`;
+```
+
+```js preview-story
+export const Sizes = () => html`
+  <yot-button size="small" id="button1">small</yot-button>
+  <yot-button size="regular" id="button2">regular</yot-button>
+  <yot-button size="large" id="button3">large</yot-button>
 `;
 ```

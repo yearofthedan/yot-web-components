@@ -10,10 +10,13 @@ describe('yot-spinner', () => {
   });
 
   it('should not visually regress', async () => {
+    const COMPENSATION_FOR_ANIMATION = 50;
     await page.goto(url);
 
     const image = await page.screenshot();
 
-    expect(image).toMatchImageSnapshot();
+    expect(image).toMatchImageSnapshot({
+      failureThreshold: COMPENSATION_FOR_ANIMATION,
+    });
   });
 });

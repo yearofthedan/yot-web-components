@@ -1,19 +1,26 @@
 describe('yot-button', () => {
-  const url = `${global.BASE_URL}?id=yot-button--normal`;
+  ['normal', 'sizes'].forEach(example =>
+    describe('normal', () => {
+      const url = `${global.BASE_URL}?id=yot-button--${example}`;
 
-  it('should be accessible', async () => {
-    await page.goto(url);
+      it('should be accessible', async () => {
+        await page.goto(url);
 
-    await expect(page).toPassAxeTests({
-      include: 'yot-button',
-    });
-  });
+        await expect(page).toPassAxeTests({
+          include: 'yot-button',
+        });
+      });
 
-  it('should not visually regress', async () => {
-    await page.goto(url);
+      it('should not visually regress', async () => {
+        const COMPENSATION_FOR_ANIMATION = 30;
+        await page.goto(url);
 
-    const image = await page.screenshot();
+        const image = await page.screenshot();
 
-    expect(image).toMatchImageSnapshot();
-  });
+        expect(image).toMatchImageSnapshot({
+          failureThreshold: COMPENSATION_FOR_ANIMATION,
+        });
+      });
+    })
+  );
 });

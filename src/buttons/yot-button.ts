@@ -7,22 +7,11 @@ enum STATE {
   loading = 'loading',
 }
 
-const buttonTypeface = css`
-  button {
-    font-family: var(--font-family-body);
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-500);
-    line-height: 1.5;
-  }
-
-  button[yot-size='small'] {
-    font-size: var(--font-size-small);
-  }
-
-  button[yot-size='large'] {
-    font-size: var(--font-size-large);
-  }
-`;
+enum SIZE {
+  small = 'small',
+  regular = 'regular',
+  large = 'large',
+}
 
 const successIndicator = css`
   button[data-action-state='success'] > slot[part='success'] {
@@ -39,21 +28,32 @@ const successIndicator = css`
 const buttonSpacing = css`
   button {
     box-sizing: border-box;
-    padding: var(--inset-density-m) var(--inset-density-l);
     border: none;
     border-radius: 0.25rem;
+    font-family: var(--font-family-body);
+    font-weight: var(--font-weight-500);
+    line-height: 1.5;
   }
 
-  button[yot-size~='small'] {
-    font-size: var(--font-size-small);
+  button[size='small'] {
+    padding: var(--inset-density-xs) var(--inset-density-m);
+    font-size: var(--font-size-xs);
+    height: var(--field-height-s);
+    width: 4rem;
   }
 
-  button[yot-size~='medium'] {
-    font-size: var(--font-size-small);
+  button[size='regular'] {
+    padding: var(--inset-density-m) var(--inset-density-m);
+    font-size: var(--font-size-s);
+    height: var(--field-height-m);
+    width: 8rem;
   }
 
-  button[yot-size~='large'] {
-    font-size: var(--font-size-large);
+  button[size='large'] {
+    padding: var(--inset-density-m) var(--inset-density-l);
+    font-size: var(--font-size-l);
+    height: var(--field-height-l);
+    width: 12rem;
   }
 
   button:focus {
@@ -66,18 +66,14 @@ const buttonSpacing = css`
 export class YotButton extends LitElement {
   static styles = css`
     :host {
-      min-width: 8rem;
       width: fit-content;
       display: inline-block;
       position: relative;
     }
 
-    ${buttonTypeface}
     ${buttonSpacing}
 
     button {
-      height: var(--field-height);
-      width: 100%;
       cursor: pointer;
       background-color: var(--palette-primary);
       color: var(--palette-primary-on);
@@ -124,6 +120,9 @@ export class YotButton extends LitElement {
   type = 'normal';
 
   @property()
+  size: SIZE = SIZE.regular;
+
+  @property()
   variant = 'primary';
 
   __click(event: Event) {
@@ -143,6 +142,7 @@ export class YotButton extends LitElement {
     return html`
       <button
         part="button"
+        size="${this.size}"
         data-action-state="${this.state}"
         ?disabled="${this.state !== STATE.idle}"
         type="${this.type}"

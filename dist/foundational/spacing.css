@@ -22,7 +22,7 @@
     --inset-density-xs: var(--spacing-slight);
     --inset-density-s: var(--spacing-slender);
     --inset-density-m: var(--spacing-noticeable);
-    --inset-density-l: var(--spacing-pronounced);
+    --inset-density-l: var(--spacing-comfortable);
 
     --border-xs: var(--spacing-teeny);
     --border-s: var(--spacing-slight);
