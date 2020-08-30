@@ -6,6 +6,6 @@ declare namespace NodeJS {
 
 declare namespace jest {
   interface Matchers<R> {
-    toPassAxeTests(config: object): R;
+    toPassAxeTests(config: Record<string, unknown>): R;
   }
 }

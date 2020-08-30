@@ -1,4 +1,11 @@
-import { LitElement, html, customElement, css, property } from 'lit-element';
+import {
+  LitElement,
+  html,
+  customElement,
+  css,
+  property,
+  TemplateResult,
+} from 'lit-element';
 
 @customElement('yot-spinner')
 export class YotButton extends LitElement {
@@ -44,7 +51,7 @@ export class YotButton extends LitElement {
     }
   `;
 
-  render() {
+  render(): TemplateResult {
     return html`
       <svg data-size="${this.size}" viewBox="0 0 40 40">
         <circle cx="20" cy="20" r="16" fill="none" stroke-width="4"></circle>

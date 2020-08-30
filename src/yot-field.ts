@@ -1,4 +1,11 @@
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import {
+  LitElement,
+  html,
+  customElement,
+  property,
+  css,
+  TemplateResult,
+} from 'lit-element';
 
 @customElement('yot-field')
 export class YotField extends LitElement {
@@ -107,7 +114,7 @@ export class YotField extends LitElement {
 
   hiddenInputRef: HTMLInputElement | null = null;
 
-  setValueToHiddenInput(value: string | null) {
+  setValueToHiddenInput(value: string | null): void {
     if (!this.ownerDocument) {
       return;
     }
@@ -123,11 +130,11 @@ export class YotField extends LitElement {
     this.hiddenInputRef.value = value ?? '';
   }
 
-  __inputChanged(e: InputEvent) {
+  __inputChanged(e: InputEvent): void {
     this.setValueToHiddenInput((e.target as HTMLInputElement).value);
   }
 
-  render() {
+  render(): TemplateResult {
     this.setValueToHiddenInput(this.value);
     return html`
       <input

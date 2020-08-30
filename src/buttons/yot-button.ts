@@ -1,4 +1,11 @@
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import {
+  LitElement,
+  html,
+  customElement,
+  property,
+  css,
+  TemplateResult,
+} from 'lit-element';
 import '../indicators/yot-spinner.ts';
 
 enum STATE {
@@ -125,7 +132,7 @@ export class YotButton extends LitElement {
   @property()
   variant = 'primary';
 
-  __click(event: Event) {
+  __click(event: Event): void {
     if (this.type === 'submit') {
       const form = this.closest('form');
       event.preventDefault();
@@ -138,7 +145,7 @@ export class YotButton extends LitElement {
     }
   }
 
-  render() {
+  render(): TemplateResult {
     return html`
       <button
         part="button"

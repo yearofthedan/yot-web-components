@@ -1,7 +1,7 @@
 export const screenshotElementsWithTag = async (
   tagName: string,
   padding = 0
-) => {
+): Promise<Buffer[]> => {
   const elements = await page.evaluate(selector => {
     const queryResult = Array.from(
       document.querySelectorAll(`${selector}:not([data-skip-visual-test])`)

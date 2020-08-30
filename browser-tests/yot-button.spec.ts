@@ -1,4 +1,4 @@
-import { screenshotElementsWithTag } from './test-setup/imageHelpers.ts';
+import { screenshotElementsWithTag } from './test-setup/imageHelpers';
 
 describe('yot-button', () => {
   ['normal', 'sizes'].forEach(example =>
