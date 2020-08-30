@@ -28,10 +28,16 @@ import 'yot-button/yot-button.js';
 ```js preview-story
 export const Normal = () => html`
   <yot-button id="button1">continue</yot-button>
-  <yot-button id="button2" state="loading">continue</yot-button>
-  <yot-button id="button3" state="success">continue</yot-button>
+  <yot-button id="button2" state="loading">
+    continue
+    <span slot="loading">loading...</loading>
+  </yot-button>
+  <yot-button id="button3" state="loading" data-skip-visual-test>
+    continue
+  </yot-button>
+  <yot-button id="button4" state="success">continue</yot-button>
 `;
-```
+`````
 
 ```js preview-story
 export const Sizes = () => html`

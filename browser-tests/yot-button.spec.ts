@@ -1,6 +1,8 @@
+import { screenshotElementsWithTag } from './test-setup/imageHelpers.ts';
+
 describe('yot-button', () => {
   ['normal', 'sizes'].forEach(example =>
-    describe('normal', () => {
+    describe(example, () => {
       const url = `${global.BASE_URL}?id=yot-button--${example}`;
 
       it('should be accessible', async () => {
@@ -12,13 +14,13 @@ describe('yot-button', () => {
       });
 
       it('should not visually regress', async () => {
-        const COMPENSATION_FOR_ANIMATION = 30;
         await page.goto(url);
+        await page.waitForSelector('yot-button');
 
-        const image = await page.screenshot();
+        const images = await screenshotElementsWithTag('yot-button');
 
-        expect(image).toMatchImageSnapshot({
-          failureThreshold: COMPENSATION_FOR_ANIMATION,
+        images.forEach(image => {
+          expect(image).toMatchImageSnapshot();
         });
       });
     })
