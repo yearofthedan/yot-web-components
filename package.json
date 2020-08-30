@@ -14,6 +14,7 @@
     "build:watch": "rimraf dist && rollup --watch -c rollup.config.js",
     "start:build": "npm run build && es-dev-server --root-dir . --app-index demo/index.html --open --compatibility none",
     "semantic-release": "semantic-release --branches main",
+    "precommit": "yarn test && yarn test:browser",
     "test": "jest",
     "test:browser": "yarn storybook:build && yarn test:browser:jest",
     "test:browser:jest": "jest --config browser-tests/jest.config.js"
@@ -70,7 +71,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "lint-staged && yarn precommit",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
