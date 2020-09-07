@@ -45,21 +45,21 @@ const buttonSpacing = css`
   button[size='small'] {
     padding: var(--inset-density-xs) var(--inset-density-m);
     font-size: var(--font-size-xs);
-    height: var(--field-height-s);
+    height: var(--button-height-s);
     width: 4rem;
   }
 
   button[size='regular'] {
     padding: var(--inset-density-m) var(--inset-density-m);
     font-size: var(--font-size-s);
-    height: var(--field-height-m);
+    height: var(--button-height);
     width: 8rem;
   }
 
   button[size='large'] {
     padding: var(--inset-density-m) var(--inset-density-l);
-    font-size: var(--font-size-l);
-    height: var(--field-height-l);
+    font-size: var(--font-size-m);
+    height: var(--button-height-l);
     width: 12rem;
   }
 

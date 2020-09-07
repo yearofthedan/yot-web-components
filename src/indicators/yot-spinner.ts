@@ -31,18 +31,18 @@ export class YotButton extends LitElement {
     }
 
     svg[data-size='small'] {
-      width: var(--icon-size-small);
-      height: var(--icon-size-small);
+      width: var(--icon-size-s);
+      height: var(--icon-size-s);
     }
 
     svg[data-size='medium'] {
-      width: var(--icon-size-medium);
-      height: var(--icon-size-medium);
+      width: var(--icon-size);
+      height: var(--icon-size);
     }
 
     svg[data-size='large'] {
-      width: var(--icon-size-large);
-      height: var(--icon-size-large);
+      width: var(--icon-size-l);
+      height: var(--icon-size-l);
     }
 
     circle {

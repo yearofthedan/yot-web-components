@@ -6,7 +6,7 @@
     --font-family-main: 'Raleway', sans-serif;
     --font-family-heading: 'Montserrat', sans-serif;
 
-    --font-size-xs: calc(var(--font-unit) * 0.75);
+    --font-size-xs: calc(var(--font-unit) * 0.8);
     --font-size-s: calc(var(--font-unit) * 1);
     --font-size-m: calc(var(--font-unit) * 1.25);
     --font-size-l: calc(var(--font-unit) * 2);

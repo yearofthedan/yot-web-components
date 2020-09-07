@@ -8,6 +8,7 @@ const baseConfig = createBasicConfig();
 export default merge(baseConfig, {
   input: [
     './src/buttons/yot-button.ts',
+    './src/fields/yot-textbox.ts',
     './src/yot-field.ts',
     './src/indicators/yot-spinner.ts',
     'lit-element',
