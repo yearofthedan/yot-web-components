@@ -31,19 +31,16 @@ export class YotTextBox extends LitElement {
   multiline = false;
 
   @property()
-  name = '';
-
-  @property()
   error?: string;
 
   @property()
   label?: string;
 
   @property()
-  placeholder = ' ';
+  placeholder?: string;
 
-  @property()
-  id = '';
+  @property({ attribute: 'field-id' })
+  fieldId?: string;
 
   hiddenInputRef: HTMLInputElement | null = null;
 
@@ -59,7 +56,7 @@ export class YotTextBox extends LitElement {
       this.hiddenInputRef = hiddenInput;
     }
 
-    this.hiddenInputRef.name = this.name;
+    this.hiddenInputRef.name = this.fieldId || '';
     this.hiddenInputRef.value = value ?? '';
   }
 
@@ -71,28 +68,29 @@ export class YotTextBox extends LitElement {
     this.setValueToHiddenInput(this.value);
 
     return html`
-      <label for="input-${this.id}">${this.label}</label>
+      <label for="${this.fieldId}">${this.label}</label>
       ${this.multiline
         ? html` <textarea
-            id="input-${this.id}"
-            name="${this.name}"
-            placeholder="${this.placeholder}"
-            inputmode="${inputMode[this.type] ?? inputMode.text}"
+            id="${this.fieldId}"
+            name="${this.fieldId}"
+            placeholder=${ifDefined(this.placeholder)}
+            inputmode=${ifDefined(inputMode[this.type])}
             @input="${this.__inputChanged}"
             aria-describedby=${ifDefined(
               this.error ? `error-${this.id}` : undefined
             )}
           >
-${this.value}</textarea
+${this.value}
+            </textarea
           >`
         : html`
             <input
-              id="input-${this.id}"
-              name="${this.name}"
+              id="${this.fieldId}"
+              name="${this.fieldId}"
               type="${this.type}"
-              inputmode="${inputMode[this.type] ?? inputMode.text}"
+              inputmode=${ifDefined(inputMode[this.type])}
               .value="${this.value}"
-              placeholder="${this.placeholder}"
+              placeholder=${ifDefined(this.placeholder)}
               @input="${this.__inputChanged}"
               aria-describedby=${ifDefined(
                 this.error ? `error-${this.id}` : undefined
@@ -112,7 +110,7 @@ ${this.value}</textarea
 
       display: grid;
       grid-auto-flow: row;
-      grid-row-gap: var(--stack-density-s);
+      grid-row-gap: var(--stack-density-xs);
       font-family: 'Raleway', sans-serif;
       font-weight: 500;
     }
