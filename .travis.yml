@@ -8,6 +8,7 @@ jobs:
       script:
         - yarn lint
         - yarn test
+        - yarn build
     - stage: release
       deploy:
         - provider: script
