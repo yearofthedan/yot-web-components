@@ -9,6 +9,8 @@ export default merge(baseConfig, {
   input: [
     './src/buttons/yot-button.ts',
     './src/fields/yot-textbox.ts',
+    './src/layout/yot-scrollview.ts',
+    './src/layout/yot-view.ts',
     './src/yot-field.ts',
     './src/indicators/yot-spinner.ts',
     'lit-element',

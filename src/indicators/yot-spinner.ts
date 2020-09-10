@@ -8,7 +8,7 @@ import {
 } from 'lit-element';
 
 @customElement('yot-spinner')
-export class YotButton extends LitElement {
+export class YotSpinner extends LitElement {
   @property()
   size = 'medium';
 
