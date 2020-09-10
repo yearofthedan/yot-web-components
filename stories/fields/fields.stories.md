@@ -1,6 +1,6 @@
 ```js script
 import { html } from '@open-wc/demoing-storybook';
-import '../../dist/yot-field.js';
+import '../../dist/index.js';
 
 export default {
   title: 'yot-field',

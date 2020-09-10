@@ -1,5 +1,6 @@
 {
   "name": "yot-web-components",
+  "main": "dist/index.js",
   "scripts": {
     "storybook": "concurrently --kill-others --names rollup,storybook \"npm run build:watch\" \"start-storybook --node-resolve --watch --open\"",
     "storybook:build": "build-storybook",

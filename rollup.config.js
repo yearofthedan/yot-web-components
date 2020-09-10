@@ -14,6 +14,7 @@ export default merge(baseConfig, {
     './src/yot-field.ts',
     './src/indicators/yot-spinner.ts',
     'lit-element',
+    './src/index.ts',
   ],
   output: {
     dir: './dist',
