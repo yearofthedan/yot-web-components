@@ -9,7 +9,14 @@ jobs:
         - yarn lint
         - yarn test
         - yarn build
+      workspaces:
+        create:
+          name: build
+          paths:
+            - dist
     - stage: release
+      workspaces:
+        use: build
       deploy:
         - provider: script
           skip_cleanup: true
