@@ -39,28 +39,27 @@ const buttonSpacing = css`
     border-radius: 0.25rem;
     font-family: var(--font-family-body);
     font-weight: var(--font-weight-500);
-    line-height: 1.5;
   }
 
   button[size='small'] {
     padding: var(--inset-density-xs) var(--inset-density-m);
     font-size: var(--font-size-xs);
     height: var(--button-height-s);
-    width: 4rem;
+    min-width: 4rem;
   }
 
   button[size='regular'] {
-    padding: var(--inset-density-m) var(--inset-density-m);
+    padding: var(--inset-density-s) var(--inset-density-m);
     font-size: var(--font-size-s);
     height: var(--button-height);
-    width: 8rem;
+    min-width: 8rem;
   }
 
   button[size='large'] {
     padding: var(--inset-density-m) var(--inset-density-l);
     font-size: var(--font-size-m);
     height: var(--button-height-l);
-    width: 12rem;
+    min-width: 8rem;
   }
 `;
 

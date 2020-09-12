@@ -1,6 +1,6 @@
 ```js script
 import { html } from '@open-wc/demoing-storybook';
-import '../dist/yot-button.js';
+import '../../dist/yot-button.js';
 
 export default {
   title: 'yot-button',
@@ -36,6 +36,7 @@ export const Normal = () => html`
     continue
   </yot-button>
   <yot-button id="button4" state="success">continue</yot-button>
+  <yot-button id="button5">button with a long label</yot-button>
 `;
 `````
 
