@@ -62,11 +62,6 @@ const buttonSpacing = css`
     height: var(--button-height-l);
     width: 12rem;
   }
-
-  button:focus {
-    outline: var(--border-m) solid;
-    outline-offset: var(--inset-density-s);
-  }
 `;
 
 @customElement('yot-button')
