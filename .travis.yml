@@ -11,12 +11,12 @@ jobs:
         - yarn build
       workspaces:
         create:
-          name: build
+          name: dist-artefact
           paths:
             - dist
     - stage: release
       workspaces:
-        use: build
+        use: dist-artefact
       deploy:
         - provider: script
           skip_cleanup: true
