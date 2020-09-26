@@ -13,6 +13,7 @@ export default merge(baseConfig, {
     './src/layout/yot-view.ts',
     './src/yot-field.ts',
     './src/indicators/yot-spinner.ts',
+    './src/typography/yot-header.ts',
     'lit-element',
     './src/index.ts',
   ],

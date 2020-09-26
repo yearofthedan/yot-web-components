@@ -1,11 +1,24 @@
 ```js script
 import { listComponent } from './listComponent';
 import { html } from '@open-wc/demoing-storybook';
+import '../../dist/yot-header.js';
 
 export default {
   title: 'Foundational',
   parameters: { component: 'null' },
 };
+```
+
+```js preview-story
+export const Header = () => html`
+<yot-header level="1">Heading level 1</yot-header>
+<yot-header level="2">Heading level 2</yot-header>
+<yot-header level="3">Heading level 3</yot-header>
+<yot-header level="4">Heading level 4</yot-header>
+<yot-header level="5">Heading level 5</yot-header>
+<yot-header level="6">Heading level 6</yot-header>
+<yot-header level="1" visual-level="2">Level 1, but styled as level 2</yot-header>
+`;
 ```
 
 ```js preview-story

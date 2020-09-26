@@ -1,13 +1,15 @@
 # YOT Web Components
-I'm tired of rewriting buttons and fields all the time. This is where I'll keep adding components for reuse / copying.
+I'm tired of rewriting buttons and fields all the time.
+This is a playground for trying common components and patterns.
 
 ## Tasks
 ### Testing / Quality
-|cmd          |description                |
-|-------------|---------------------------|
-|`yarn lint`  |lints the src and storybook|
-|`yarn format`|prettier the code          |
-|`yarn test`  |runs component tests       |
+|cmd              |description                |
+|-----------------|---------------------------|
+|`yarn lint`      |lints the src and storybook|
+|`yarn format`    |prettier the code          |
+|`yarn test`      |runs component tests       |
+|`yarn storybook` |runs the storybook         |
 
 *Note on testing*
 
@@ -18,3 +20,6 @@ So far most issues have been pretty minor. Mostly the feedback from failing test
 
 ### To demo
 WIP, but for now `yarn storybook`. I'll get something deployed soon too.
+
+## Inspiration
+- Stumbled across [Duetds](https://www.duetds.com/components/heading/) in a search for different Heading patterns to toy with.
