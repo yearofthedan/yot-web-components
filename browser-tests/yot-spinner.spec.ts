@@ -10,7 +10,7 @@ describe('yot-spinner', () => {
   });
 
   it('should not visually regress', async () => {
-    const COMPENSATION_FOR_ANIMATION = 100;
+    const COMPENSATION_FOR_ANIMATION = 150;
     await page.goto(url);
 
     const image = await page.screenshot();
