@@ -3,7 +3,8 @@
   "main": "dist/index.js",
   "scripts": {
     "storybook": "concurrently --kill-others --names rollup,storybook \"npm run build:watch\" \"start-storybook --node-resolve --watch --open\"",
-    "storybook:build": "build-storybook",
+    "build-storybook": "build-storybook && mkdir storybook-static/src && cp -r ./src/foundational storybook-static/src/foundational",
+    "deploy-storybook": "storybook-to-ghpages --existing-output-dir=storybook-static",
     "tsc:watch": "tsc --watch",
     "lint:eslint": "eslint --ext .ts,.html .",
     "format:eslint": "eslint --ext .ts,.html . --fix",
@@ -17,7 +18,7 @@
     "semantic-release": "semantic-release --branches main",
     "precommit": "yarn test && yarn test:browser",
     "test": "jest",
-    "test:browser": "yarn storybook:build && yarn test:browser:jest",
+    "test:browser": "yarn build-storybook && yarn test:browser:jest",
     "test:browser:jest": "jest --config browser-tests/jest.config.js"
   },
   "dependencies": {
@@ -29,10 +30,11 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@open-wc/building-rollup": "^1.0.0",
-    "@open-wc/demoing-storybook": "^2.0.0",
+    "@open-wc/demoing-storybook": "^2.4.7",
     "@open-wc/eslint-config": "^3.0.0",
     "@open-wc/testing-helpers": "^1.8.6",
     "@rollup/plugin-typescript": "^5.0.2",
+    "@storybook/storybook-deployer": "^2.8.10",
     "@testing-library/dom": "^7.23.0",
     "@testing-library/jest-dom": "^5.11.2",
     "@testing-library/user-event": "^12.1.1",

@@ -10,6 +10,8 @@ This is a playground for trying common components and patterns.
 |`yarn format`    |prettier the code          |
 |`yarn test`      |runs component tests       |
 |`yarn storybook` |runs the storybook         |
+|`yarn build-storybook`  | builds the storybook site for deploying |
+|`yarn deploy-storybook` | publishes the storybook site as a github page |
 
 *Note on testing*
 
