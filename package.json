@@ -26,14 +26,14 @@
     "lit-html": "^1.1.2"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-env": "^7.14.5",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@open-wc/building-rollup": "^1.0.0",
     "@open-wc/demoing-storybook": "^2.4.7",
     "@open-wc/eslint-config": "^3.0.0",
     "@open-wc/testing-helpers": "^1.8.6",
-    "@rollup/plugin-typescript": "^5.0.2",
+    "@rollup/plugin-typescript": "^8.2.1",
     "@storybook/storybook-deployer": "^2.8.10",
     "@testing-library/dom": "^7.23.0",
     "@testing-library/jest-dom": "^5.11.2",
@@ -64,12 +64,12 @@
     "react-dom": "^16.13.1",
     "react-styleguidist": "^11.0.8",
     "rimraf": "^2.6.3",
-    "rollup": "^2.3.4",
-    "rollup-plugin-copy": "^3.3.0",
+    "rollup": "^2.52.1",
+    "rollup-plugin-copy": "^3.4.0",
     "semantic-release": "^17.1.1",
     "ts-jest": "^26.3.0",
-    "tslib": "^2.0.1",
-    "typescript": "~4.0.2",
+    "tslib": "^2.3.0",
+    "typescript": "~4.3.4",
     "webpack": "^4.44.1"
   },
   "lint-staged": {
