@@ -62,7 +62,6 @@
     "puppeteer": "^5.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-styleguidist": "^11.0.8",
     "rimraf": "^2.6.3",
     "rollup": "^2.52.1",
     "rollup-plugin-copy": "^3.4.0",
