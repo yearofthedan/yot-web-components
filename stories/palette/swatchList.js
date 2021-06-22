@@ -1,5 +1,5 @@
-import { html } from '@open-wc/demoing-storybook';
 import { swatch } from './swatch';
+import { html } from 'lit-element';
 
 export const swatchList = swatches => {
   return html`

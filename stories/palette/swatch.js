@@ -1,4 +1,4 @@
-import { html } from '@open-wc/demoing-storybook';
+import { html } from 'lit-element';
 
 export const swatch = (name, color, colorOn) => {
   const backgroundColorCssVar = `--palette-${name}`;

@@ -1,20 +1,14 @@
-```js script
-import { html } from '@open-wc/demoing-storybook';
-import '../../dist/index.js';
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { html } from '@open-wc/testing-helpers';
+import '../src/yot-field';
+import '../src/buttons/yot-button';
 
-export default {
-  title: 'yot-field',
-  component: 'yot-field',
-  options: { selectedPanel: "storybookjs/knobs/panel" },
-};
-```
+<Meta title="yot-field" component="yot-field"/>
 
 # yot-field
-
 Combination of input field + label + error handling
 
 ## How to use
-
 ### Installation
 
 ```bash
@@ -25,9 +19,11 @@ yarn add yot-field
 import 'yot-field/yot-field.js';
 ```
 
-```js preview-story
-export const Normal = () => html`
-  <form style="display: grid; grid-template-columns: fit-content; grid-row-gap: var(--stack-density-s)">
+<Canvas>
+  <Story name="normal">
+    {
+      html`
+<form style="display: grid; grid-template-columns: fit-content; grid-row-gap: var(--stack-density-s)">
     <yot-field id="text" label="text"></yot-field>
     <yot-field id="prefilled" value="something" label="prefilled"></yot-field>
     <yot-field id="password" type="password" label="password"></yot-field>
@@ -43,27 +39,18 @@ export const Normal = () => html`
     <yot-field id="radio" type="radio" label="radio"></yot-field>
     <yot-field id="range" type="range" label="range"></yot-field>
   </form>
-`;
-
-export const Error = () => html`
-  <form>
-    <yot-field id="date1" type="date" error="⚠ date cannot be in the past!" label="date"></yot-field>
-    <div style="width: 200px;">
-      <yot-field id="date2" type="date" error="⚠ date cannot be in the past!" label="date"></yot-field>
-    </div>
-  </form>
-
-`;
-
-function onsubmit(e) {
-e.preventDefault();
-console.log(Array.from(e.target.elements).map(e => e.value));
-}
-
-export const Example = () => html`
-  <form @submit="${onsubmit}">
-    <yot-field id="field-id" label="name"></yot-field>
-    <yot-button type="submit" id="text">text</yot-button></yot-field>
-  </form>
-`;
-```
+`
+    }
+  </Story>
+  <Story name="error">
+    {html`<form><yot-field id="date1" type="date" error="⚠ date cannot be in the past!" label="date"></yot-field></form>`}
+  </Story>
+  <Story name="example">
+    {html`
+    <form>
+      <yot-field id="field-id" label="name"></yot-field>
+      <yot-button type="submit" id="text">submit</yot-button>
+    </form>
+`}
+  </Story>
+</Canvas>

@@ -1,0 +1,28 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { html } from '@open-wc/testing-helpers';
+import '../src/indicators/yot-spinner';
+
+<Meta title="yot-spinner" component="yot-spinner"/>
+
+# yot-spinner
+## How to use
+
+### Installation
+
+```bash
+yarn add yot-spinner
+```
+
+```js
+import 'yot-spinner/yot-spinner.js';
+```
+
+<Canvas>
+  <Story name="normal">
+    {html`
+<yot-spinner size="small"></yot-spinner>
+  <yot-spinner size="medium"></yot-spinner>
+  <yot-spinner size="large"></yot-spinner>`}
+  </Story>
+</Canvas>
+

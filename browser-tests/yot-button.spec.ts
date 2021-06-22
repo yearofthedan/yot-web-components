@@ -4,7 +4,6 @@ describe('yot-button', () => {
   ['normal', 'sizes'].forEach(example =>
     describe(example, () => {
       const url = `${global.BASE_URL}?id=yot-button--${example}`;
-
       it('should be accessible', async () => {
         await page.goto(url);
 

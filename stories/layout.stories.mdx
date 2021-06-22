@@ -1,14 +1,9 @@
-```js script
-import { html } from '@open-wc/demoing-storybook';
-import '../../dist/yot-scrollview.js';
-import '../../dist/yot-view.js';
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { html } from '@open-wc/testing-helpers';
+import '../src/layout/yot-scrollview';
+import '../src/layout/yot-view';
 
-export default {
-  title: 'yot-layout',
-  component: 'yot-layout',
-  options: { selectedPanel: "storybookjs/knobs/panel" },
-};
-```
+<Meta title="yot-layout" component="yot-layout"/>
 
 # yot-layout
 
@@ -27,9 +22,10 @@ import 'yot-scrollview/yot-scrollview.js';
 import 'yot-view/yot-view.js';
 ```
 
-```js preview-story
-export const ScrollView = () => html`
-    <yot-view style="height: 100px;">
+<Canvas>
+  <Story name="normal">
+    {html`
+<yot-view style="height: 100px;">
       <yot-scrollview>
         <p>Blah blah blah</p>
         <p>Blah blah blah</p>
@@ -53,5 +49,7 @@ export const ScrollView = () => html`
         <p>Blah blah blah</p>
       </yot-scrollview>
     </div>
-`;
-```
+`}
+  </Story>
+</Canvas>
+

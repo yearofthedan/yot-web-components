@@ -1,0 +1,44 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { swatchList } from './palette/swatchList';
+
+<Meta title="Foundational/Palette"/>
+
+## Primary
+
+  <Story name="Primary">
+    {swatchList([
+      { name: 'primary-light', color: '#C8E6C9', on: '#151414' },
+      { name: 'primary', color: '#66BB6A', on: '#151414' },
+      { name: 'primary-dark', color: '#388E3C', on: '#EEF2F1' },
+    ])}
+  </Story>
+
+## Secondary
+
+<Story name="Secondary">
+  {swatchList([
+    { name: 'secondary-light', color: '#BCAAA4', on: '#151414' },
+    { name: 'secondary', color: '#795548', on: '#eef2f1' },
+    { name: 'secondary-dark', color: '#4E342E', on: '#eef2f1' },
+  ])}
+</Story>
+
+## Shadowing
+
+<Story name="Shadowing">
+  {swatchList([
+    { name: 'background-light', color: '#FAFAFA', on: '#151414' },
+    { name: 'background', color: '#EEEEEE', on: '#151414' },
+    { name: 'background-dark', color: '#CACACA', on: '#151414' },
+  ])}
+</Story>
+
+## Specialised
+
+<Story name="Specialised">
+  {swatchList([
+    { name: 'success', color: '#8BC34A', on: '#151414' },
+    { name: 'error', color: '#D84315', on: '#eef2f1' },
+    { name: 'info', color: '#FDD835', on: '#151414' },
+  ])}
+</Story>

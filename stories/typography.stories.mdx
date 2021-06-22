@@ -1,0 +1,20 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { html } from 'lit-element'; import { listComponent } from './typography/listComponent';
+
+<Meta title="Foundational/Typefaces"/>
+
+## typefaces
+
+|css variable  |type      | uses                    |
+|--------------|----------|-------------------------|
+|--font-size-xl|size unit |lead headings            |
+|--font-size-l |size unit |subheadings              |
+|--font-size-m |size unit |subheadings              |
+|--font-size-s |size unit |main body content, inputs|
+|--font-size-xs|size unit |small aside text         |
+
+
+## Typography
+<Story name="Typography">
+  {listComponent()}
+</Story>

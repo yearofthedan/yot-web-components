@@ -1,32 +1,41 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { html } from 'lit-element';
 
-```js script
-import { html } from '@open-wc/demoing-storybook';
+<Meta title="Foundational/Spacing"/>
 
-export default {
-  title: 'Foundational/Spacing',
-  parameters: { component: 'null' },
-};
-```
+## spacing
+
+|css variable |type| uses                |
+|-------------|----|---------------------|
+|--stack-density-xs|size unit| |
+|--stack-density-s|size unit| |
+|--stack-density-m|size unit| |
+|--stack-density-l|size unit| |
+|--stack-density-xl|size unit| |
+|--inline-density-xs|size unit| |
+|--inline-density-s|size unit| |
+|--inline-density-m|size unit| |
+|--inset-density-xs|size unit| |
+|--inset-density-s|size unit| |
+|--inset-density-m|size unit| |
+|--inset-density-l|size unit| |
 
 ## Inline density
-
-```js preview-story
-export const Inline = () => html`
-<style>
+<Story name="Inline">
+  {html`
+  <style>
     section {
-      display: table;
-      padding-bottom: 40px;
-    }
-
+    display: table;
+    padding-bottom: 40px;
+  }
     .inline > div {
-      height: 8px;
-      background: blue;
-      display: inline-block;
-      position: relative;
-      transform: translateY(8px);
-    }
-
-    .inline > div::after {
+    height: 8px;
+    background: blue;
+    display: inline-block;
+    position: relative;
+    transform: translateY(8px);
+  }
+      .inline > div::after {
       content: attr(data-label);
       transform: rotate(28deg);
       position: absolute;
@@ -36,32 +45,31 @@ export const Inline = () => html`
       transform-origin: bottom left;
       font-size: 0.8rem;
     }
-
-    .inline > span {
+      .inline > span {
       height: 40px;
       width: 40px;
       background: grey;
       display: inline-block;
     }
-</style>
-
-<section>
-   <div class="inline">
-     <span></span>
-     <div style="width: var(--inline-density-xs)" data-label="--inline-density-xs"></div>
-     <span></span>
-     <div style="width: var(--inline-density-s)" data-label="--inline-density-s"></div>
-     <span></span>
-     <div style="width: var(--inline-density-m)" data-label="--inline-density-m"></div>
-     <span></span>
-   </div>
- <section>`;
-```
+  </style>
+  <section>
+     <div class="inline">
+       <span></span>
+       <div style="width: var(--inline-density-xs)" data-label="--inline-density-xs"></div>
+       <span></span>
+       <div style="width: var(--inline-density-s)" data-label="--inline-density-s"></div>
+       <span></span>
+       <div style="width: var(--inline-density-m)" data-label="--inline-density-m"></div>
+       <span></span>
+     </div>
+   <section>`}
+</Story>
 
 ## Inset density
-       
-```js preview-story
-export const Inset = () => html`
+
+<Story name="Inset">
+  {
+    html`
   <style>
     .container {
       height: 140px;
@@ -70,7 +78,6 @@ export const Inset = () => html`
       display: inline-block;
       position: relative;
     }
-
     .container::after {
       content: attr(data-label);
       position: absolute;
@@ -79,7 +86,6 @@ export const Inset = () => html`
       left: 0;
       font-size: 0.8rem;
     }
-
     .content {
       height: 100%;
       width: 100%;
@@ -99,13 +105,14 @@ export const Inset = () => html`
   <div class="container" style="padding: var(--inset-density-l)" data-label="--inset-density-l">
     <span class="content"></span>
   </div>
- `;
-```
+`}
+</Story>
 
 ## Stack density
 
-```js preview-story
-export const Stack = () => html`
+<Story name="Stack">
+  {
+    html`
 <style>
     .spacing {
       width: 8px;
@@ -114,7 +121,6 @@ export const Stack = () => html`
       margin-left: 30px;
       transform: translateX(8px);
     }
-    
     .spacing::after {
       content: attr(data-label);
       position: absolute;
@@ -124,7 +130,6 @@ export const Stack = () => html`
       font-size: 0.8rem;
       transform: translateY(-50%);
     }
-    
     .content {
       height: 40px;
       width: 40px;
@@ -143,23 +148,5 @@ export const Stack = () => html`
   <span class="content"></span>
   <div class="spacing"  style="height: var(--stack-density-xl)" data-label="--stack-density-xl"></div>
   <span class="content"></span>
-`;
-```
-
-
-## spacing
-
-|css variable |type| uses                |
-|-------------|----|---------------------|
-|--stack-density-xs|size unit| |
-|--stack-density-s|size unit| |
-|--stack-density-m|size unit| |
-|--stack-density-l|size unit| |
-|--stack-density-xl|size unit| |
-|--inline-density-xs|size unit| |
-|--inline-density-s|size unit| |
-|--inline-density-m|size unit| |
-|--inset-density-xs|size unit| |
-|--inset-density-s|size unit| |
-|--inset-density-m|size unit| |
-|--inset-density-l|size unit| |
+`}
+</Story>
