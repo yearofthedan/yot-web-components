@@ -1,12 +1,5 @@
-import {
-  LitElement,
-  html,
-  customElement,
-  css,
-  TemplateResult,
-} from 'lit-element';
+import { LitElement, html, css, TemplateResult } from 'lit';
 
-@customElement('yot-scrollview')
 export class YotScrollView extends LitElement {
   static styles = css`
     :host {

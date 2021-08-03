@@ -1,13 +1,6 @@
-import {
-  LitElement,
-  html,
-  customElement,
-  css,
-  property,
-  TemplateResult,
-} from 'lit-element';
+import { LitElement, html, css, TemplateResult } from 'lit';
+import { property } from 'lit/decorators.js';
 
-@customElement('yot-spinner')
 export class YotSpinner extends LitElement {
   @property()
   size = 'medium';

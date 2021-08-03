@@ -1,12 +1,5 @@
-import {
-  LitElement,
-  html,
-  customElement,
-  css,
-  TemplateResult,
-} from 'lit-element';
+import { LitElement, html, css, TemplateResult } from 'lit';
 
-@customElement('yot-view')
 export class YotView extends LitElement {
   static styles = css`
     :host {

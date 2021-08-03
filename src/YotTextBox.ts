@@ -1,12 +1,6 @@
-import {
-  LitElement,
-  html,
-  customElement,
-  property,
-  css,
-  TemplateResult,
-} from 'lit-element';
-import { ifDefined } from 'lit-html/directives/if-defined';
+import { LitElement, html, css, TemplateResult } from 'lit';
+import { property } from 'lit/decorators.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 const inputMode: { [key: string]: string } = {
   text: 'text',
@@ -19,7 +13,6 @@ const inputMode: { [key: string]: string } = {
   url: 'url',
 };
 
-@customElement('yot-textbox')
 export class YotTextBox extends LitElement {
   @property()
   value = '';

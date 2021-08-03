@@ -1,13 +1,6 @@
-import {
-  css,
-  customElement,
-  html,
-  LitElement,
-  property,
-  TemplateResult,
-} from 'lit-element';
+import { css, html, LitElement, TemplateResult } from 'lit';
+import { property } from 'lit/decorators.js';
 
-@customElement('yot-header')
 export class YotHeader extends LitElement {
   @property()
   level = '1';

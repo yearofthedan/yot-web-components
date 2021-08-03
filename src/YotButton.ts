@@ -1,24 +1,9 @@
-import {
-  LitElement,
-  html,
-  customElement,
-  property,
-  css,
-  TemplateResult,
-} from 'lit-element';
-import '../indicators/yot-spinner.ts';
+import { LitElement, html, css, TemplateResult } from 'lit';
+import { property } from 'lit/decorators.js';
+import './yot-spinner.js';
 
-enum STATE {
-  idle = 'idle',
-  success = 'success',
-  loading = 'loading',
-}
-
-enum SIZE {
-  small = 'small',
-  regular = 'regular',
-  large = 'large',
-}
+type BUTTON_STATES = 'idle' | 'success' | 'loading';
+type BUTTON_SIZES = 'small' | 'regular' | 'large';
 
 const successIndicator = css`
   button[data-action-state='success'] > slot[part='success'] {
@@ -63,7 +48,6 @@ const buttonSpacing = css`
   }
 `;
 
-@customElement('yot-button')
 export class YotButton extends LitElement {
   static styles = css`
     :host {
@@ -115,13 +99,13 @@ export class YotButton extends LitElement {
   `;
 
   @property()
-  state: STATE = STATE.idle;
+  state: BUTTON_STATES = 'idle';
 
   @property()
   type = 'normal';
 
   @property()
-  size: SIZE = SIZE.regular;
+  size: BUTTON_SIZES = 'regular';
 
   @property()
   variant = 'primary';
@@ -145,7 +129,7 @@ export class YotButton extends LitElement {
         part="button"
         size="${this.size}"
         data-action-state="${this.state}"
-        ?disabled="${this.state !== STATE.idle}"
+        ?disabled="${this.state !== 'idle'}"
         type="${this.type}"
         @click="${this.__click}"
       >
