@@ -35,9 +35,7 @@
       expect(document.querySelector('yot-field')).to.be.accessible();
     });
 
-    it('has not visually diverged', async () => {
-      return visualDiff(document.querySelector('body'), 'yot-field');
-    });
+    it('has not visually diverged', () => visualDiff(document.querySelector('body'), 'yot-field'));
   });
 </script>
 </body>

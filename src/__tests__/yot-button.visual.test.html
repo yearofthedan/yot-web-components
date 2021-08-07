@@ -35,9 +35,7 @@
       expect(document.querySelector('yot-button')).to.be.accessible();
     });
 
-    it('has not visually diverged', async () => {
-      return visualDiff(document.querySelector('body'), 'yot-button');
-    });
+    it('has not visually diverged', () => visualDiff(document.querySelector('body'), 'yot-button'));
 
   });
 </script>
