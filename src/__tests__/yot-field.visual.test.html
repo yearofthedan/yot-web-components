@@ -11,14 +11,14 @@
 
 <script type="module">
   import { html, render } from 'lit-html';
-  import '../../dist/yot-button.js';
+  import '../../dist/yot-field.js';
 
   render(
     html`
       <div>
-        <yot-button size="small">Small</yot-button>
-        <yot-button size="regular">Regular</yot-button>
-        <yot-button size="large">Large</yot-button>
+        <yot-field id="field-id" label="Your Name"></yot-field>
+        <yot-field id="field-id" label="No thanks!" type="radio"></yot-field>
+        <yot-field id="field-id" error="Dodgy value there!"></yot-field>
       </div>
     `,
     document.querySelector('body')
@@ -31,7 +31,7 @@
 
   runTests(() => {
     it('has not visually diverged', async () => {
-      return visualDiff(    document.querySelector('body'), 'yot-button');
+      return visualDiff(    document.querySelector('body'), 'yot-field');
     });
   });
 </script>
