@@ -16,9 +16,9 @@
   render(
     html`
       <div>
-        <yot-field id="field-id" label="Your Name"></yot-field>
-        <yot-field id="field-id" label="No thanks!" type="radio"></yot-field>
-        <yot-field id="field-id" error="Dodgy value there!"></yot-field>
+        <yot-field id="name" label="Your Name"></yot-field>
+        <yot-field id="interest" label="No thanks!" type="radio"></yot-field>
+        <yot-field id="dodgy" label="Dodgy" error="Dodgy value there!"></yot-field>
       </div>
     `,
     document.querySelector('body')
@@ -28,10 +28,15 @@
 <script type="module">
   import { runTests } from '@web/test-runner-mocha';
   import { visualDiff } from '@web/test-runner-visual-regression';
+  import { expect } from '@open-wc/testing';
 
   runTests(() => {
+    it('passes a11y', async () => {
+      expect(document.querySelector('yot-field')).to.be.accessible();
+    });
+
     it('has not visually diverged', async () => {
-      return visualDiff(    document.querySelector('body'), 'yot-field');
+      return visualDiff(document.querySelector('body'), 'yot-field');
     });
   });
 </script>

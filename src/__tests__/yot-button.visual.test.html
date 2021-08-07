@@ -28,11 +28,17 @@
 <script type="module">
   import { runTests } from '@web/test-runner-mocha';
   import { visualDiff } from '@web/test-runner-visual-regression';
+  import { expect } from '@open-wc/testing';
 
   runTests(() => {
-    it('has not visually diverged', async () => {
-      return visualDiff(    document.querySelector('body'), 'yot-button');
+    it('passes a11y', async () => {
+      expect(document.querySelector('yot-button')).to.be.accessible();
     });
+
+    it('has not visually diverged', async () => {
+      return visualDiff(document.querySelector('body'), 'yot-button');
+    });
+
   });
 </script>
 </body>
