@@ -2842,6 +2842,13 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
+"@types/mkdirp@^1.0.1":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/mkdirp/-/mkdirp-1.0.2.tgz#8d0bad7aa793abe551860be1f7ae7f3198c16666"
+  integrity sha512-o0K1tSO0Dx5X6xlU5F1D6625FawhC3dU3iqr25lluNv/+/QIVH8RLNEiVokgIZo+mz+87w/3Mkg/VvQS+J51fQ==
+  dependencies:
+    "@types/node" "*"
+
 "@types/mocha@^5.2.7":
   version "5.2.7"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-5.2.7.tgz#315d570ccb56c53452ff8638738df60726d5b6ea"
@@ -2906,6 +2913,20 @@
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/@types/parse5/-/parse5-6.0.1.tgz#f8ae4fbcd2b9ba4ff934698e28778961f9cb22ca"
   integrity sha512-ARATsLdrGPUnaBvxLhUlnltcMgn7pQG312S8ccdYlnyijabrX9RN/KN/iGj9Am96CoW8e/K9628BA7Bv4XHdrA==
+
+"@types/pixelmatch@^5.2.2":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@types/pixelmatch/-/pixelmatch-5.2.4.tgz#ca145cc5ede1388c71c68edf2d1f5190e5ddd0f6"
+  integrity sha512-HDaSHIAv9kwpMN7zlmwfTv6gax0PiporJOipcrGsVNF3Ba+kryOZc0Pio5pn6NhisgWr7TaajlPEKTbTAypIBQ==
+  dependencies:
+    "@types/node" "*"
+
+"@types/pngjs@^6.0.0":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@types/pngjs/-/pngjs-6.0.1.tgz#c711ec3fbbf077fed274ecccaf85dd4673130072"
+  integrity sha512-J39njbdW1U/6YyVXvC9+1iflZghP8jgRf2ndYghdJb5xL49LYDB+1EuAxfbuJ2IBbWIL3AjHPQhgaTxT3YaYeg==
+  dependencies:
+    "@types/node" "*"
 
 "@types/pretty-hrtime@^1.0.0":
   version "1.0.1"
@@ -3305,7 +3326,7 @@
     chrome-launcher "^0.14.0"
     puppeteer-core "^9.1.0"
 
-"@web/test-runner-commands@^0.5.6", "@web/test-runner-commands@^0.5.8":
+"@web/test-runner-commands@^0.5.0", "@web/test-runner-commands@^0.5.6", "@web/test-runner-commands@^0.5.8":
   version "0.5.8"
   resolved "https://registry.yarnpkg.com/@web/test-runner-commands/-/test-runner-commands-0.5.8.tgz#919231cdf6be31972bf6bf0eba48c9dd6ec38dd9"
   integrity sha512-WLiQ8WQL/4YqR5kknGaor2F41O/je1C1QiCuIcO3LxPLoJuiJQ3KoYpAQ4pI13AwlBpzPcnSnISrypa/RpTFbA==
@@ -3313,7 +3334,7 @@
     "@web/test-runner-core" "^0.10.14"
     mkdirp "^1.0.4"
 
-"@web/test-runner-core@^0.10.14", "@web/test-runner-core@^0.10.19", "@web/test-runner-core@^0.10.8", "@web/test-runner-core@^0.10.9":
+"@web/test-runner-core@^0.10.13", "@web/test-runner-core@^0.10.14", "@web/test-runner-core@^0.10.19", "@web/test-runner-core@^0.10.8", "@web/test-runner-core@^0.10.9":
   version "0.10.19"
   resolved "https://registry.yarnpkg.com/@web/test-runner-core/-/test-runner-core-0.10.19.tgz#7cab7f2639bced3fc1909d489d65c4a1d1957011"
   integrity sha512-Aj1sO/CT2kWw8r9BqRdP0D9TGsbReRDcrMI5SuhAoZJF4m8BGvox8WiQp2Zu0IyVFkuk6ZXFzsAnOJTVSVqB1w==
@@ -3371,6 +3392,20 @@
     "@web/test-runner-core" "^0.10.8"
     "@web/test-runner-coverage-v8" "^0.4.5"
     playwright "^1.8.1"
+
+"@web/test-runner-visual-regression@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@web/test-runner-visual-regression/-/test-runner-visual-regression-0.6.1.tgz#3f73a5bd8022a8133dacc8a620665f39e968768f"
+  integrity sha512-7G52dqklWAaOfydzy41fysZptut3+/dIk9TpS/jujAwy+FCD9m76F6CSRp0A+fKY0xzYS2zaXwVUTigwzOqV9w==
+  dependencies:
+    "@types/mkdirp" "^1.0.1"
+    "@types/pixelmatch" "^5.2.2"
+    "@types/pngjs" "^6.0.0"
+    "@web/test-runner-commands" "^0.5.0"
+    "@web/test-runner-core" "^0.10.13"
+    mkdirp "^1.0.4"
+    pixelmatch "^5.2.1"
+    pngjs "^6.0.0"
 
 "@web/test-runner@^0.13.12":
   version "0.13.15"
@@ -10942,6 +10977,13 @@ pirates@^4.0.0, pirates@^4.0.1:
   dependencies:
     node-modules-regexp "^1.0.0"
 
+pixelmatch@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/pixelmatch/-/pixelmatch-5.2.1.tgz#9e4e4f4aa59648208a31310306a5bed5522b0d65"
+  integrity sha512-WjcAdYSnKrrdDdqTcVEY7aB7UhhwjYQKYhHiBXdJef0MOaQeYpUdQ+iVyBLa5YBKS8MPVPPMX7rpOByISLpeEQ==
+  dependencies:
+    pngjs "^4.0.1"
+
 pkg-conf@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/pkg-conf/-/pkg-conf-2.1.0.tgz#2126514ca6f2abfebd168596df18ba57867f0058"
@@ -11019,10 +11061,20 @@ please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
+pngjs@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-4.0.1.tgz#f803869bb2fc1bfe1bf99aa4ec21c108117cfdbe"
+  integrity sha512-rf5+2/ioHeQxR6IxuYNYGFytUyG3lma/WW1nsmjeHlWwtb2aByla6dkVc8pmJ9nplzkTA0q2xx7mMWrOTqT4Gg==
+
 pngjs@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-5.0.0.tgz#e79dd2b215767fd9c04561c01236df960bce7fbb"
   integrity sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==
+
+pngjs@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-6.0.0.tgz#ca9e5d2aa48db0228a52c419c3308e87720da821"
+  integrity sha512-TRzzuFRRmEoSW/p1KVAmiOgPco2Irlah+bGFCeNfJXxxYGwSw7YwAOAcd7X28K/m5bjBWKsC29KyoMfHbypayg==
 
 pnp-webpack-plugin@1.6.4:
   version "1.6.4"

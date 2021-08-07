@@ -12,6 +12,7 @@
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "test": "tsc && wtr --coverage",
+    "test-update": "tsc && wtr --update-visual-baseline",
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
     "semantic-release": "semantic-release --branches main",
     "precommit": "yarn test && yarn build"
@@ -35,7 +36,9 @@
     "@web/dev-server-storybook": "^0.3.5",
     "@web/test-runner": "^0.13.12",
     "@web/test-runner-commands": "^0.5.8",
+    "@web/test-runner-mocha": "^0.7.3",
     "@web/test-runner-playwright": "^0.8.6",
+    "@web/test-runner-visual-regression": "^0.6.1",
     "concurrently": "^5.1.0",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^7.2.0",

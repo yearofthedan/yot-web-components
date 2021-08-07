@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel='stylesheet' href='../foundational/colors.css' />
+  <link rel='stylesheet' href='../foundational/typography.css' />
+  <link rel='stylesheet' href='../foundational/spacing.css' />
+  <link rel='stylesheet' href='../foundational/sizes.css' />
+  <link rel='stylesheet' href='../foundational/overrides.css' />
+</head>
+<body>
+
+<script type="module">
+  import { html, render } from 'lit-html';
+  import '../../dist/yot-button.js';
+
+  render(
+    html`
+      <div><yot-button>Action!</yot-button></div>
+    `,
+    document.querySelector('body')
+  );
+</script>
+
+<script type="module">
+  import { runTests } from '@web/test-runner-mocha';
+  import { visualDiff } from '@web/test-runner-visual-regression';
+
+  runTests(() => {
+    it('desktop has a red background', async () => {
+      return visualDiff(    document.querySelector('body'), 'yot-button');
+    });
+  });
+</script>
+</body>
+</html>
