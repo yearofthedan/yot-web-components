@@ -15,7 +15,7 @@
 
   render(
     html`
-      <div>
+      <div style="width: fit-content;">
         <yot-textbox field-id="name" label="Your Name" value="Dan"></yot-textbox>
         <yot-textbox field-id="feedback" label="Feedback" multiline="true" value="Great\njob!"></yot-textbox>
         <yot-textbox field-id="dodgy" label="Dodgy" error="Dodgy value there!"></yot-textbox>
@@ -35,7 +35,9 @@
       expect(document.querySelector('yot-textbox')).to.be.accessible();
     });
 
-    it('has not visually diverged', () => visualDiff(    document.querySelector('body'), 'yot-textbox'));
+    it('has not visually diverged', async () => {
+      await visualDiff(document.querySelector('div'), 'yot-textbox');
+    });
   });
 </script>
 </body>

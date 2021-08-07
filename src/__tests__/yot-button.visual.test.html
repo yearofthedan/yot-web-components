@@ -15,7 +15,7 @@
 
   render(
     html`
-      <div>
+      <div style="width: fit-content;">
         <yot-button size="small">Small</yot-button>
         <yot-button size="regular">Regular</yot-button>
         <yot-button size="large">Large</yot-button>
@@ -35,7 +35,9 @@
       expect(document.querySelector('yot-button')).to.be.accessible();
     });
 
-    it('has not visually diverged', () => visualDiff(document.querySelector('body'), 'yot-button'));
+    it('has not visually diverged', async () => {
+      await visualDiff(document.querySelector('div'), 'yot-button');
+    });
 
   });
 </script>

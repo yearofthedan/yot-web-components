@@ -15,7 +15,7 @@
 
   render(
     html`
-      <div>
+      <div style="width: fit-content;">
         <yot-field id="name" label="Your Name"></yot-field>
         <yot-field id="interest" label="No thanks!" type="radio"></yot-field>
         <yot-field id="dodgy" label="Dodgy" error="Dodgy value there!"></yot-field>
@@ -35,7 +35,9 @@
       expect(document.querySelector('yot-field')).to.be.accessible();
     });
 
-    it('has not visually diverged', () => visualDiff(document.querySelector('body'), 'yot-field'));
+    it('has not visually diverged', async () => {
+      await visualDiff(document.querySelector('div'), 'yot-field');
+    });
   });
 </script>
 </body>
