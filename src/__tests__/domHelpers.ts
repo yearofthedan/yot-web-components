@@ -1,19 +1,11 @@
 import { fixture } from '@open-wc/testing';
+import { sendKeys } from '@web/test-runner-commands';
 
-export function typeText(input: HTMLInputElement, value: string) {
+export async function typeText(input: HTMLInputElement, value: string) {
   input.select();
-  if (input.type === 'number') {
-    // eslint-disable-next-line no-param-reassign
-    input.value = value;
-  } else {
-    input.setRangeText(value);
-  }
-
-  const inputEvent = new Event('input', {
-    bubbles: true,
-    cancelable: true,
+  await sendKeys({
+    type: value,
   });
-  input.dispatchEvent(inputEvent);
 }
 
 export function getShadowRoot(el: Element) {

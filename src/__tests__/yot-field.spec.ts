@@ -15,7 +15,7 @@ describe('yot-field', () => {
       '<yot-field id="field-id" label="Your Name"></yot-field>'
     );
 
-    typeText(getByLabel(root, 'Your Name'), 'Hello world!');
+    await typeText(getByLabel(root, 'Your Name'), 'Hello world!');
 
     expect(getByLabel(root, 'Your Name').value).to.equal('Hello world!');
   });
@@ -73,7 +73,7 @@ describe('yot-field', () => {
 
     const field = getShadowRoot(form.querySelector('yot-field')!);
 
-    typeText(getByLabel(field, 'Your Name'), 'Hello world');
+    await typeText(getByLabel(field, 'Your Name'), 'Hello world');
     (getByRole(form, 'button') as HTMLButtonElement).click();
 
     expect(updatedValue).to.equal('Hello world');

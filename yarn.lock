@@ -3305,7 +3305,7 @@
     chrome-launcher "^0.14.0"
     puppeteer-core "^9.1.0"
 
-"@web/test-runner-commands@^0.5.6":
+"@web/test-runner-commands@^0.5.6", "@web/test-runner-commands@^0.5.8":
   version "0.5.8"
   resolved "https://registry.yarnpkg.com/@web/test-runner-commands/-/test-runner-commands-0.5.8.tgz#919231cdf6be31972bf6bf0eba48c9dd6ec38dd9"
   integrity sha512-WLiQ8WQL/4YqR5kknGaor2F41O/je1C1QiCuIcO3LxPLoJuiJQ3KoYpAQ4pI13AwlBpzPcnSnISrypa/RpTFbA==

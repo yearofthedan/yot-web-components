@@ -14,7 +14,8 @@ describe('yot-textbox', () => {
     const root = await renderAndGetShadowRoot(
       '<yot-textbox field-id="field-id" label="Your Name"></yot-textbox>'
     );
-    typeText(getByLabel(root, 'Your Name'), 'Hello world!');
+
+    await typeText(getByLabel(root, 'Your Name'), 'Hello world!');
 
     expect(getByLabel(root, 'Your Name').value).to.equal('Hello world!');
   });
@@ -32,10 +33,10 @@ describe('yot-textbox', () => {
       '<yot-textbox field-id="field-id" type="number" label="Age" vale="123"></yot-textbox>'
     );
 
-    typeText(getByLabel(root, 'Age'), 'not a number');
+    await typeText(getByLabel(root, 'Age'), 'not a number');
     expect(getByDisplayValue(root, '')).not.to.equal(null);
 
-    typeText(getByLabel(root, 'Age'), '1');
+    await typeText(getByLabel(root, 'Age'), '1');
     expect(getByDisplayValue(root, '1')).not.to.equal(null);
   });
 
@@ -75,7 +76,7 @@ describe('yot-textbox', () => {
 
     const field = getShadowRoot(form.querySelector('yot-textbox')!);
 
-    typeText(getByLabel(field, 'Your Name'), 'Hello world');
+    await typeText(getByLabel(field, 'Your Name'), 'Hello world');
     (getByRole(form, 'button') as HTMLButtonElement).click();
 
     expect(updatedValue).to.equal('Hello world');
