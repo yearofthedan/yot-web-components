@@ -128,7 +128,7 @@ ${this.value}
     textarea {
       padding: var(--inset-density-xs);
       font-size: var(--main-font-size);
-      height: var(--field-height);
+      height: var(--textarea-height);
       width: 12rem;
       border-radius: var(--border-s);
       border: solid var(--border-xs) var(--palette-background);

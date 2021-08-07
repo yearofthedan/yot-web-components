@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel='stylesheet' href='../foundational/colors.css' />
+  <link rel='stylesheet' href='../foundational/typography.css' />
+  <link rel='stylesheet' href='../foundational/spacing.css' />
+  <link rel='stylesheet' href='../foundational/sizes.css' />
+  <link rel='stylesheet' href='../foundational/overrides.css' />
+</head>
+<body>
+
+<script type="module">
+  import { html, render } from 'lit-html';
+  import '../../dist/yot-textbox.js';
+
+  render(
+    html`
+      <div>
+        <yot-textbox label="Your Name" value="Dan"></yot-textbox>
+        <yot-textbox label="Feedback" multiline="true" value="Great\njob!"></yot-textbox>
+        <yot-textbox error="Dodgy value there!"></yot-textbox>
+      </div>
+    `,
+    document.querySelector('body')
+  );
+</script>
+
+<script type="module">
+  import { runTests } from '@web/test-runner-mocha';
+  import { visualDiff } from '@web/test-runner-visual-regression';
+
+  runTests(() => {
+    it('has not visually diverged', async () => {
+      return visualDiff(    document.querySelector('body'), 'yot-textbox');
+    });
+  });
+</script>
+</body>
+</html>
