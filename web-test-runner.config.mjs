@@ -14,7 +14,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   },
 
   browsers: [
-      playwrightLauncher({ product: 'webkit' }),
+      playwrightLauncher({ product: 'chromium' }),
   ],
 
   plugins: [
