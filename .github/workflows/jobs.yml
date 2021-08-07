@@ -19,5 +19,8 @@ jobs:
           yarn test
         env:
           CI: true
-      - name: publish
-        run: npx semantic-release --branches main
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release  --branches main
