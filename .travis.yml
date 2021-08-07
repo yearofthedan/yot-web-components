@@ -7,6 +7,7 @@ jobs:
     - stage: test
       script:
         - yarn lint
+        - npx playwright install-deps
         - yarn test
         - yarn build
       workspaces:
