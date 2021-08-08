@@ -10,7 +10,7 @@ jobs:
       - name: Setup yarn
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
       - run: yarn --frozen-lockfile
       - run: npx playwright install-deps
       - name: Test
