@@ -148,3 +148,9 @@ ${this.value}
     }
   `;
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'yot-textbox': YotTextBox;
+  }
+}

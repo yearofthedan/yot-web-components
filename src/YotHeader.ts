@@ -87,3 +87,9 @@ export class YotHeader extends LitElement {
     }
   `;
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'yot-header': YotHeader;
+  }
+}

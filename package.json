@@ -1,5 +1,6 @@
 {
   "name": "yot-web-components",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {

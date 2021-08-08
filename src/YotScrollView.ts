@@ -16,3 +16,9 @@ export class YotScrollView extends LitElement {
     return html` <slot></slot> `;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'yot-scrollview': YotScrollView;
+  }
+}

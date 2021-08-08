@@ -16,3 +16,9 @@ export class YotView extends LitElement {
     return html` <slot></slot> `;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'yot-view': YotView;
+  }
+}

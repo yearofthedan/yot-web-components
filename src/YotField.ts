@@ -153,3 +153,9 @@ export class YotField extends LitElement {
     `;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'yot-field': YotField;
+  }
+}

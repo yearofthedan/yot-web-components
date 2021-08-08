@@ -52,3 +52,9 @@ export class YotSpinner extends LitElement {
     `;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'yot-spinner': YotSpinner;
+  }
+}

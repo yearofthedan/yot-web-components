@@ -144,3 +144,9 @@ export class YotButton extends LitElement {
     `;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'yot-button': YotButton;
+  }
+}
