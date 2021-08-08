@@ -20,7 +20,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   plugins: [
     visualRegressionPlugin({
       diffOptions: {
-        threshold: 0.2,
+        threshold: 0.3,
         includeAA: true,
       },
       update: process.argv.includes('--update-visual-baseline'),
