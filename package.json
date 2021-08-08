@@ -11,11 +11,11 @@
     "prepublish": "tsc",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
-    "test": "tsc && wtr --coverage",
+    "test": "yarn build && wtr --coverage",
     "test-update": "tsc && wtr --update-visual-baseline",
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
     "semantic-release": "semantic-release --branches main",
-    "precommit": "yarn lint && yarn test && yarn build"
+    "precommit": "yarn lint && yarn test"
   },
   "dependencies": {
     "lit": "^2.0.0-rc.2",
