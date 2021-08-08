@@ -1,8 +1,8 @@
-import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
-import { html } from '@open-wc/testing-helpers';
-import '../src/buttons/yot-button';
+import { Meta, Story, Canvas } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { html } from '@open-wc/testing';
+import '../dist/yot-button.js';
 
-<Meta title="yot-button" component="yot-button"/>
+<Meta title="yot-button" component="yot-button" argTypes={{ label: { control: 'text' } }}/>
 
 # yot-button
 
@@ -20,23 +20,23 @@ yarn add yot-button
 import 'yot-button/yot-button.js';
 ```
 
+export const Template = ({ label, state }) => html`<yot-button state=${state}>${label}</yot-button>`;
 
 <Canvas>
-  <Story name="normal">
-    {
-      html`
-  <yot-button id="button1">continue</yot-button>
-  <yot-button id="button2" state="loading">
-    continue
-    <span slot="loading">loading...</loading>
-  </yot-button>
-  <yot-button id="button3" state="loading" data-skip-visual-test>
-    continue
-  </yot-button>
-  <yot-button id="button4" state="success">continue</yot-button>
-  <yot-button id="button5">button with a long label</yot-button>
-`
-    }
+  <Story name="normal" args={{label: 'continue', state: 'idle'}}>
+      {Template.bind({})}
+  </Story>
+  <Story name="loading" args={{label: 'continue', state:"loading"}}>
+    {Template.bind({})}
+  </Story>
+  <Story name="custom loading">
+    {html`<yot-button id="button2" state="loading">
+      continue
+      <span slot="loading">loading...</loading>
+    </yot-button>`}
+  </Story>
+  <Story name="success" args={{label: 'continue', state:"success"}}>
+    {Template.bind({})}
   </Story>
   <Story name="sizes">
 {html` <yot-button size="small" id="button1">small</yot-button>
@@ -45,4 +45,3 @@ import 'yot-button/yot-button.js';
     `}
   </Story>
 </Canvas>
-

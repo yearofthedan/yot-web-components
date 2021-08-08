@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel='stylesheet' href='../foundational/colors.css' />
+  <link rel='stylesheet' href='../foundational/typography.css' />
+  <link rel='stylesheet' href='../foundational/spacing.css' />
+  <link rel='stylesheet' href='../foundational/sizes.css' />
+  <link rel='stylesheet' href='../foundational/overrides.css' />
+</head>
+<body>
+
+<script type="module">
+  import { html, render } from 'lit-html';
+  import '../../dist/yot-button.js';
+
+  render(
+    html`
+      <div style="width: 1000px">
+        <yot-button size="small">Small</yot-button>
+        <yot-button size="regular">Regular</yot-button>
+        <yot-button size="large">Large</yot-button>
+      </div>
+    `,
+    document.querySelector('body')
+  );
+</script>
+
+<script type="module">
+  import { runTests } from '@web/test-runner-mocha';
+  import { visualDiff } from '@web/test-runner-visual-regression';
+  import { expect, waitUntil } from '@open-wc/testing';
+
+  runTests(() => {
+    it('passes a11y', async () => {
+      expect(document.querySelector('yot-button')).to.be.accessible();
+    });
+
+    it('has not visually diverged', async () => {
+      await waitUntil(() => document.readyState === "complete");
+      await visualDiff(document.querySelector('div'), 'yot-button');
+    });
+  });
+</script>
+</body>
+</html>

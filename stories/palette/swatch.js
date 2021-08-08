@@ -1,4 +1,4 @@
-import { html } from 'lit-element';
+import { html } from '@open-wc/testing';
 
 export const swatch = (name, color, colorOn) => {
   const backgroundColorCssVar = `--palette-${name}`;

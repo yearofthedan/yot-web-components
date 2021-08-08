@@ -1,0 +1,62 @@
+import { Meta, Story, Canvas } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { html } from '@open-wc/testing';
+import '../dist/yot-textbox.js';
+import '../dist/yot-button.js';
+
+<Meta title="yot-textbox" component="yot-textbox"/>
+
+# yot-textbox
+## How to use
+### Installation
+
+```bash
+yarn add yot-textbox
+```
+
+```js
+import 'yot-textbox/yot-textbox.js';
+```
+
+export const TextField = () => html`
+  <yot-textbox label="Text field" field-id="text"></yot-textbox>
+`;
+
+export const Multiline = () => html`
+  <yot-textbox label="Text field" field-id="multiline" multiline="true"></yot-textbox>
+`;
+
+export const Phone = () => html`
+  <yot-textbox label="Phone" field-id="phone" type="tel" label="phone" placeholder="include the area code"></yot-textbox>
+`;
+
+export const Email = () => html`
+  <yot-textbox label="Email" field-id="email" type="email" label="email"></yot-textbox>
+`;
+
+export const PasswordField = () => html`
+  <yot-textbox
+    label="Password field"
+    type="password"
+    field-id="password"
+    value="1234">
+  </yot-textbox>
+`;
+
+export const Number = () => html`
+  <yot-textbox label="Number" field-id="number" type="number" label="number"></yot-textbox>
+`;
+
+export const Errors = () => html`
+  <yot-textbox label="Text field with error" field-id="text-with-error" error="Needs text"></yot-textbox>
+`;
+
+<Canvas>
+  <Story name="TextField">{TextField}</Story>
+  <Story name="Multiline">{Multiline}</Story>
+  <Story name="Phone">{Phone}</Story>
+  <Story name="Email">{Email}</Story>
+  <Story name="PasswordField">{PasswordField}</Story>
+  <Story name="Number">{Number}</Story>
+  <Story name="Errors">{Errors}</Story>
+</Canvas>
+

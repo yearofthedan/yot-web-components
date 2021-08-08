@@ -3,3 +3,5 @@ build/
 node_modules/
 dist/
 storybook-static/
+screenshots/**/failed/
+coverage/

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel='stylesheet' href='../foundational/colors.css' />
+  <link rel='stylesheet' href='../foundational/typography.css' />
+  <link rel='stylesheet' href='../foundational/spacing.css' />
+  <link rel='stylesheet' href='../foundational/sizes.css' />
+  <link rel='stylesheet' href='../foundational/overrides.css' />
+</head>
+<body>
+
+<script type="module">
+  import { html, render } from 'lit-html';
+  import '../../dist/yot-field.js';
+
+  render(
+    html`
+      <div style="width: 1000px;">
+        <yot-field id="name" label="Your Name"></yot-field>
+        <yot-field id="interest" label="No thanks!" type="radio"></yot-field>
+        <yot-field id="dodgy" label="Dodgy" error="Dodgy value there!"></yot-field>
+      </div>
+    `,
+    document.querySelector('body')
+  );
+</script>
+
+<script type="module">
+  import { runTests } from '@web/test-runner-mocha';
+  import { visualDiff } from '@web/test-runner-visual-regression';
+  import { expect, waitUntil } from '@open-wc/testing';
+
+  runTests(() => {
+    it('passes a11y', async () => {
+      expect(document.querySelector('yot-field')).to.be.accessible();
+    });
+
+    it('has not visually diverged', async () => {
+      await waitUntil(() => document.readyState === "complete");
+      await visualDiff(document.querySelector('div'), 'yot-field');
+    });
+  });
+</script>
+</body>
+</html>

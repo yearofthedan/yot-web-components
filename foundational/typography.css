@@ -1,0 +1,70 @@
+@import url(//fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap);
+@import url(//fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap);
+
+:root {
+    --font-unit: 1rem;
+    --font-family-main: 'Raleway', sans-serif;
+    --font-family-heading: 'Montserrat', sans-serif;
+
+    --font-size-xs: calc(var(--font-unit) * 0.8);
+    --font-size-s: calc(var(--font-unit) * 1);
+    --font-size-m: calc(var(--font-unit) * 1.25);
+    --font-size-l: calc(var(--font-unit) * 2);
+    --font-size-xl: calc(var(--font-unit) * 4);
+}
+
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+pre {
+    font-family: monospace;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: var(--font-size-xl);
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: var(--font-size-l);
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: var(--font-size-l);
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: var(--font-size-m);
+}
+
+h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: var(--font-size-m);
+}
+
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: var(--font-size-s);
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: var(--font-size-s);
+}
+
+aside {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: var(--font-size-xs);
+}

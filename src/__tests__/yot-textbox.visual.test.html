@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel='stylesheet' href='../foundational/colors.css' />
+  <link rel='stylesheet' href='../foundational/typography.css' />
+  <link rel='stylesheet' href='../foundational/spacing.css' />
+  <link rel='stylesheet' href='../foundational/sizes.css' />
+  <link rel='stylesheet' href='../foundational/overrides.css' />
+</head>
+<body>
+
+<script type="module">
+  import { html, render } from 'lit-html';
+  import '../../dist/yot-textbox.js';
+
+  render(
+    html`
+      <div style="width: 1000px;">
+        <yot-textbox field-id="name" label="Your Name" value="Dan"></yot-textbox>
+        <yot-textbox field-id="feedback" label="Feedback" multiline="true" value="Great\njob!"></yot-textbox>
+        <yot-textbox field-id="dodgy" label="Dodgy" error="Dodgy value there!"></yot-textbox>
+      </div>
+    `,
+    document.querySelector('body')
+  );
+</script>
+
+<script type="module">
+  import { runTests } from '@web/test-runner-mocha';
+  import { visualDiff } from '@web/test-runner-visual-regression';
+  import { expect, waitUntil } from '@open-wc/testing';
+
+  runTests(() => {
+    it('passes a11y', async () => {
+      expect(document.querySelector('yot-textbox')).to.be.accessible();
+    });
+
+    it('has not visually diverged', async () => {
+      await waitUntil(() => document.readyState === "complete");
+      await visualDiff(document.querySelector('div'), 'yot-textbox');
+    });
+  });
+</script>
+</body>
+</html>

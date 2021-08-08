@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <script type="module" src="https://unpkg.com/yot-web-components@1.3.0/dist/yot-button.js"></script>
+  <script type="module" src="https://unpkg.com/yot-web-components@1.3.0/dist/yot-field.js"></script>
+  <link rel='stylesheet' href="https://unpkg.com/yot-web-components@1.3.0/dist/foundational/colors.css" />
+  <link rel='stylesheet' href="https://unpkg.com/yot-web-components@1.3.0/dist/foundational/overrides.css" />
+  <link rel='stylesheet' href="https://unpkg.com/yot-web-components@1.3.0/dist/foundational/sizes.css" />
+  <link rel='stylesheet' href="https://unpkg.com/yot-web-components@1.3.0/dist/foundational/spacing.css" />
+  <link rel='stylesheet' href="https://unpkg.com/yot-web-components@1.3.0/dist/foundational/typography.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    div {
+      width: 48px;
+      height: 48px;
+      display: inline-block;
+    }
+
+    form {
+      background-color: var(--color-background);
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      padding: var(--padding-unit);
+    }
+
+    body {
+      --palette-crowshead: #2a160b;
+      --palette-marigold: #c19230;
+      --palette-cloudy: #f8fafc;
+      --palette-overcast: #ecf4f9;
+      --palette-fountain-blue: #62a9c1;
+      --palette-wedgewood: #497897;
+
+      --color-headline: var(--palette-fountain-blue);
+      --color-background: var(--palette-cloudy);
+      --color-background-alt: var(--palette-overcast);
+      --color-label-text: var(--palette-marigold);
+      --color-body-text: var(--palette-wedgewood);
+      --color-accent:  var(--palette-crowshead);
+      --color-accent-alt:  var(--palette-marigold);
+      --color-error-text: var(--color-accent-alt);
+
+      --font-size-s: 1rem;
+      --font-size-xs: 0.8rem;
+
+      --padding-unit: 0.25rem;
+      --base-unit: 0.125rem;
+
+      font-family: 'Raleway', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <section style="margin-top: 2rem;">
+    Palette:
+    <div style="background-color: var(--palette-fountain-blue);"></div>
+    <div style="background-color: var(--palette-wedgewood);"></div>
+    <div style="background-color: var(--palette-cloudy);"></div>
+    <div style="background-color: var(--palette-overcast);"></div>
+    <div style="background-color: var(--palette-crowshead);"></div>
+    <div style="background-color: var(--palette-marigold);"></div>
+  </section>
+
+  <form>
+    <yot-field id="name" type="text" value="something" error="⚠️ not a real name" label="Full name">
+    </yot-field>
+    <yot-button type="submit">
+      Submit
+    </yot-button>
+  </form>
+
+</body>
+</html>

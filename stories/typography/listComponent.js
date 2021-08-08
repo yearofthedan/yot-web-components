@@ -1,4 +1,4 @@
-import { html } from 'lit-element';
+import { html } from '@open-wc/testing';
 
 const entries = [
     {

@@ -1,5 +1,5 @@
 import { swatch } from './swatch';
-import { html } from 'lit-element';
+import { html } from '@open-wc/testing';
 
 export const swatchList = swatches => {
   return html`
