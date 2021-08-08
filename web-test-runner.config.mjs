@@ -2,8 +2,8 @@ import { playwrightLauncher } from '@web/test-runner-playwright';
 import { visualRegressionPlugin } from '@web/test-runner-visual-regression/plugin';
 
 const unitTests = [
-  'dist/**/*.test.js',
-  'dist/**/*.spec.js',
+  'build/**/*.test.js',
+  'build/**/*.spec.js',
 ]
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
