@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { html } from '@open-wc/testing';
+import '../build/yot-card.js';
+import '../build/yot-header.js';
+import '../build/yot-button.js';
+
+<Meta title="yot-card" component="yot-card"/>
+
+# yot-card
+
+Experiments with card components
+
+<Canvas>
+  <Story name="normal">
+    {html`
+      <yot-card>
+        <yot-header slot="header" level="2">Heading level 2</yot-header>
+        <div slot="content">Blah blah</div>
+        <yot-button slot="actions" size="small">More?</yot-button>
+      </yot-card>
+`}
+  </Story>
+</Canvas>
+
