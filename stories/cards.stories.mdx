@@ -13,11 +13,25 @@ Experiments with card components
 <Canvas>
   <Story name="normal">
     {html`
+    <div>
       <yot-card>
-        <yot-header slot="header" level="2">Heading level 2</yot-header>
-        <div slot="content">Blah blah</div>
-        <yot-button slot="actions" size="small">More?</yot-button>
-      </yot-card>
+                <div  slot="image" >sdsd</div>
+                <yot-header slot="header" level="2">Heading level 2</yot-header>
+                <div slot="content">Blah blah</div>
+                <yot-button slot="actions" size="small">More?</yot-button>
+              </yot-card>
+      <yot-card>
+                <img slot="image" alt="placeholder" src="https://cdn.duetds.com/api/assets/illustrations/placeholder-dark.svg" />
+                <yot-header slot="header" level="2">Heading level 2</yot-header>
+                <div slot="content">Blah blah</div>
+                <yot-button slot="actions" size="small">More?</yot-button>
+              </yot-card>
+      <yot-card>
+                <yot-header slot="header" level="2">Heading level 2</yot-header>
+                <p slot="content">Doo ba doo ba blah blah</p>
+                <yot-button slot="actions" size="small">More?</yot-button>
+              </yot-card>
+</div>
 `}
   </Story>
 </Canvas>

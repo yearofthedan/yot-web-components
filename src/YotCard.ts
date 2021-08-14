@@ -1,30 +1,45 @@
 import { LitElement, html, css, TemplateResult } from 'lit';
-import { property } from 'lit/decorators.js';
 
 export class YotCard extends LitElement {
   static styles = css`
     :host {
       position: relative;
       max-height: 400px;
-      aspect-ratio: 5/4;
+      min-height: fit-content;
+      width: 400px;
       display: inline-block;
-      background-color: var(--palette-background-light);
+      background-color: var(--palette-background);
+      border: var(--spacing-slight) solid var(--palette-primary);
     }
 
-    slot[name='content'] {
-      flex: 1;
+    ::slotted([slot='content']) {
+      padding-inline: var(--spacing-slender);
+      padding-block: var(--spacing-slight);
+    }
+
+    ::slotted([slot='actions']) {
+      padding-inline: var(--spacing-slender);
+      padding-block: var(--spacing-slender);
+    }
+
+    ::slotted([slot='header']) {
+      padding-inline: var(--spacing-slender);
+      padding-block: var(--spacing-slight);
+      display: block;
+    }
+
+    div[name='image'] {
+      overflow: hidden;
+      max-height: 200px;
+      background-color: grey;
     }
 
     section {
       height: 100%;
       display: grid;
-      grid-auto-rows: max-content 1fr max-content;
+      grid-auto-rows: max-content max-content max-content max-content;
     }
   `;
-
-  @property()
-  image =
-    'https://cdn.duetds.com/api/assets/illustrations/placeholder-dark.svg';
 
   render(): TemplateResult {
     return html`
@@ -32,6 +47,9 @@ export class YotCard extends LitElement {
         <header>
           <slot name="header" part="header"> </slot>
         </header>
+        <div name="image">
+          <slot name="image" part="image"></slot>
+        </div>
         <slot name="content" part="content"> </slot>
         <footer>
           <slot name="actions" part="actions"> </slot>
