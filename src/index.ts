@@ -1,5 +1,6 @@
 import './yot-button.js';
 import './yot-card.js';
+import './yot-card-collection.js';
 import './yot-field.js';
 import './yot-header.js';
 import './yot-scrollview.js';

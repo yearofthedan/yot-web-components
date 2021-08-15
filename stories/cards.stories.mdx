@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas } from '@web/storybook-prebuilt/addon-docs/blocks.js';
 import { html } from '@open-wc/testing';
 import '../build/yot-card.js';
+import '../build/yot-card-collection.js';
 import '../build/yot-header.js';
 import '../build/yot-button.js';
 
@@ -15,12 +16,6 @@ Experiments with card components
     {html`
     <div>
       <yot-card>
-                <div  slot="image" >sdsd</div>
-                <yot-header slot="header" level="2">Heading level 2</yot-header>
-                <div slot="content">Blah blah</div>
-                <yot-button slot="actions" size="small">More?</yot-button>
-              </yot-card>
-      <yot-card>
                 <img slot="image" alt="placeholder" src="https://cdn.duetds.com/api/assets/illustrations/placeholder-dark.svg" />
                 <yot-header slot="header" level="2">Heading level 2</yot-header>
                 <div slot="content">Blah blah</div>
@@ -32,6 +27,48 @@ Experiments with card components
                 <yot-button slot="actions" size="small">More?</yot-button>
               </yot-card>
 </div>
+`}
+  </Story>
+  <Story name="card collections">
+    {html`
+<section>
+<div>
+    <yot-card-collection>
+      <yot-card>
+        <img slot='image' alt='placeholder' src='https://cdn.duetds.com/api/assets/illustrations/placeholder-dark.svg' />
+        <yot-header slot='header' level='2'>Heading level 2</yot-header>
+        <div slot='content'>Blah blah</div>
+        <yot-button slot='actions' size='small'>More?</yot-button>
+      </yot-card>
+      <yot-card>
+        <yot-header slot='header' level='2'>Heading level 2</yot-header>
+        <p slot='content'>Doo ba doo ba blah blah</p>
+        <yot-button slot='actions' size='small'>More?</yot-button>
+      </yot-card>
+    </yot-card-collection>
+</div>
+<div style="width: 450px; height: 500px;">
+    <yot-card-collection>
+      <yot-card>
+        <img slot='image' alt='placeholder' src='https://cdn.duetds.com/api/assets/illustrations/placeholder-dark.svg' />
+        <yot-header slot='header' level='2'>Heading level 2</yot-header>
+        <div slot='content'>Blah blah</div>
+        <yot-button slot='actions' size='small'>More?</yot-button>
+      </yot-card>
+      <yot-card>
+        <yot-header slot='header' level='2'>Heading level 2</yot-header>
+        <p slot='content'>Doo ba doo ba blah blah</p>
+        <yot-button slot='actions' size='small'>More?</yot-button>
+      </yot-card>
+      <yot-card>
+        <img slot='image' alt='placeholder' src='https://cdn.duetds.com/api/assets/illustrations/placeholder-dark.svg' />
+        <yot-header slot='header' level='2'>Heading level 2</yot-header>
+        <div slot='content'>Blah blah</div>
+        <yot-button slot='actions' size='small'>More?</yot-button>
+      </yot-card>
+    </yot-card-collection>
+</div>
+</section>
 `}
   </Story>
 </Canvas>

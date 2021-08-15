@@ -43,7 +43,7 @@ export class YotCard extends LitElement {
 
   render(): TemplateResult {
     return html`
-      <section>
+      <article>
         <header>
           <slot name="header" part="header"> </slot>
         </header>
@@ -54,7 +54,7 @@ export class YotCard extends LitElement {
         <footer>
           <slot name="actions" part="actions"> </slot>
         </footer>
-      </section>
+      </article>
     `;
   }
 }
