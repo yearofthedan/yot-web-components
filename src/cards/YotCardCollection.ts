@@ -3,7 +3,7 @@ import { LitElement, html, css, TemplateResult } from 'lit';
 export class YotCardCollection extends LitElement {
   static styles = css`
     :host {
-      display: block;
+      display: flex;
       height: inherit;
       width: inherit;
       overflow: auto;

@@ -16,7 +16,8 @@
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
     "semantic-release": "semantic-release --branches main",
     "prepublish": "yarn build",
-    "precommit": "yarn lint && yarn test"
+    "precommit": "yarn lint && yarn test",
+    "prepare": "husky install"
   },
   "dependencies": {
     "lit": "^2.0.0-rc.2",
@@ -94,7 +95,9 @@
     "*.ts": [
       "eslint --fix",
       "prettier --write"
-    ]
+    ],
+    "*.{ts,html}": "eslint --cache --fix",
+    "*.gitignore": "prettier --write"
   },
   "version": "0.0.0-development",
   "repository": {

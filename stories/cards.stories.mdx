@@ -1,7 +1,11 @@
 import { Meta, Story, Canvas } from '@web/storybook-prebuilt/addon-docs/blocks.js';
 import { html } from '@open-wc/testing';
-import '../build/yot-card.js';
-import '../build/yot-card-collection.js';
+import '../build/cards/yot-card.js';
+import '../build/cards/yot-card-actions.js';
+import '../build/cards/yot-card-banner.js';
+import '../build/cards/yot-card-collection.js';
+import '../build/cards/yot-card-content.js';
+import '../build/cards/yot-card-heading.js';
 import '../build/yot-header.js';
 import '../build/yot-button.js';
 
@@ -16,55 +20,102 @@ Experiments with card components
     {html`
     <div>
       <yot-card>
-                <img slot="image" alt="placeholder" src="https://cdn.duetds.com/api/assets/illustrations/placeholder-dark.svg" />
-                <yot-header slot="header" level="2">Heading level 2</yot-header>
-                <div slot="content">Blah blah</div>
-                <yot-button slot="actions" size="small">More?</yot-button>
-              </yot-card>
+        <yot-card-heading>
+          <yot-header level="4">My holiday</yot-header>
+        </yot-card-heading>                
+        <yot-card-banner src="stories/samples/holiday.png"></yot-card-banner>
+        <yot-card-content><div>Blah blah</div></yot-card-content>
+        <yot-card-actions><yot-button size="small">More?</yot-button></yot-card-actions>
+      </yot-card>
+       <yot-card>
+        <yot-card-banner src="stories/samples/holiday.png">
+          <yot-card-heading>
+            <yot-header level="4">My holiday</yot-header>
+            <yot-card-actions><yot-button size="small">More?</yot-button></yot-card-actions>
+          </yot-card-heading>                
+        </yot-card-banner>
+        <yot-card-content><div>Blah<br /> blah</div></yot-card-content>
+      </yot-card>
+     
       <yot-card>
-                <yot-header slot="header" level="2">Heading level 2</yot-header>
-                <p slot="content">Doo ba doo ba blah blah</p>
-                <yot-button slot="actions" size="small">More?</yot-button>
-              </yot-card>
+          <yot-card-banner alt="placeholder" src="stories/samples/sunset.png"></yot-card-banner>
+          <yot-header level="4">My holiday</yot-header>
+          <yot-card-content><div>Blah<br /> blah</div></yot-card-content>
+          <yot-button size="small">More?</yot-button>
+      </yot-card>
+      <yot-card>
+          <yot-header level="4">My holiday</yot-header>
+          <yot-card-content><p>Doo ba doo ba blah blah</p></yot-card-content>
+          <yot-button size="small">More?</yot-button>
+      </yot-card>
 </div>
 `}
   </Story>
   <Story name="card collections">
     {html`
 <section>
-<div>
-    <yot-card-collection>
+<div style="width: 500px; height: 200px;">
+     <yot-card>
+        <yot-card-heading>
+          <yot-header level="4">My holiday</yot-header>
+        </yot-card-heading>                
+        <yot-card-banner src="stories/samples/holiday.png"></yot-card-banner>
+        <yot-card-content><div>Blah blah</div></yot-card-content>
+        <yot-card-actions><yot-button size="small">More?</yot-button></yot-card-actions>
+      </yot-card>
+       <yot-card>
+        <yot-card-banner src="stories/samples/holiday.png">
+          <yot-card-heading>
+            <yot-header level="4">My holiday</yot-header>
+            <yot-card-actions><yot-button size="small">More?</yot-button></yot-card-actions>
+          </yot-card-heading>                
+        </yot-card-banner>
+        <yot-card-content><div>Blah<br /> blah</div></yot-card-content>
+      </yot-card>
+     
       <yot-card>
-        <img slot='image' alt='placeholder' src='https://cdn.duetds.com/api/assets/illustrations/placeholder-dark.svg' />
-        <yot-header slot='header' level='2'>Heading level 2</yot-header>
-        <div slot='content'>Blah blah</div>
-        <yot-button slot='actions' size='small'>More?</yot-button>
+          <yot-card-banner alt="placeholder" src="stories/samples/sunset.png"></yot-card-banner>
+          <yot-header level="4">My holiday</yot-header>
+          <yot-card-content><div>Blah<br /> blah</div></yot-card-content>
+          <yot-button size="small">More?</yot-button>
       </yot-card>
       <yot-card>
-        <yot-header slot='header' level='2'>Heading level 2</yot-header>
-        <p slot='content'>Doo ba doo ba blah blah</p>
-        <yot-button slot='actions' size='small'>More?</yot-button>
+          <yot-header level="4">My holiday</yot-header>
+          <yot-card-content><p>Doo ba doo ba blah blah</p></yot-card-content>
+          <yot-button size="small">More?</yot-button>
       </yot-card>
     </yot-card-collection>
 </div>
 <div style="width: 450px; height: 500px;">
     <yot-card-collection>
       <yot-card>
-        <img slot='image' alt='placeholder' src='https://cdn.duetds.com/api/assets/illustrations/placeholder-dark.svg' />
-        <yot-header slot='header' level='2'>Heading level 2</yot-header>
-        <div slot='content'>Blah blah</div>
-        <yot-button slot='actions' size='small'>More?</yot-button>
+        <yot-card-heading>
+          <yot-header level="4">My holiday</yot-header>
+        </yot-card-heading>                
+        <yot-card-banner src="stories/samples/holiday.png"></yot-card-banner>
+        <yot-card-content><div>Blah blah</div></yot-card-content>
+        <yot-card-actions><yot-button size="small">More?</yot-button></yot-card-actions>
+      </yot-card>
+       <yot-card>
+        <yot-card-banner src="stories/samples/holiday.png">
+          <yot-card-heading>
+            <yot-header level="4">My holiday</yot-header>
+            <yot-card-actions><yot-button size="small">More?</yot-button></yot-card-actions>
+          </yot-card-heading>                
+        </yot-card-banner>
+        <yot-card-content><div>Blah<br /> blah</div></yot-card-content>
+      </yot-card>
+     
+      <yot-card>
+          <yot-card-banner alt="placeholder" src="stories/samples/sunset.png"></yot-card-banner>
+          <yot-header level="4">My holiday</yot-header>
+          <yot-card-content><div>Blah<br /> blah</div></yot-card-content>
+          <yot-button size="small">More?</yot-button>
       </yot-card>
       <yot-card>
-        <yot-header slot='header' level='2'>Heading level 2</yot-header>
-        <p slot='content'>Doo ba doo ba blah blah</p>
-        <yot-button slot='actions' size='small'>More?</yot-button>
-      </yot-card>
-      <yot-card>
-        <img slot='image' alt='placeholder' src='https://cdn.duetds.com/api/assets/illustrations/placeholder-dark.svg' />
-        <yot-header slot='header' level='2'>Heading level 2</yot-header>
-        <div slot='content'>Blah blah</div>
-        <yot-button slot='actions' size='small'>More?</yot-button>
+          <yot-header level="4">My holiday</yot-header>
+          <yot-card-content><p>Doo ba doo ba blah blah</p></yot-card-content>
+          <yot-button size="small">More?</yot-button>
       </yot-card>
     </yot-card-collection>
 </div>
