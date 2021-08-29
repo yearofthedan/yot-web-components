@@ -1,13 +1,11 @@
 import { Meta, Story, Canvas } from '@web/storybook-prebuilt/addon-docs/blocks.js';
 import { html } from '@open-wc/testing';
 import '../build/cards/yot-card.js';
-import '../build/cards/yot-card-actions.js';
 import '../build/cards/yot-card-banner.js';
 import '../build/cards/yot-card-collection.js';
 import '../build/cards/yot-card-content.js';
 import '../build/cards/yot-card-heading.js';
 import '../build/yot-header.js';
-import '../build/yot-button.js';
 
 <Meta title="yot-card" component="yot-card"/>
 
@@ -25,13 +23,11 @@ Experiments with card components
         </yot-card-heading>                
         <yot-card-banner src="stories/samples/holiday.png"></yot-card-banner>
         <yot-card-content><div>Blah blah</div></yot-card-content>
-        <yot-card-actions><yot-button size="small">More?</yot-button></yot-card-actions>
       </yot-card>
        <yot-card>
         <yot-card-banner src="stories/samples/holiday.png">
           <yot-card-heading>
             <yot-header level="4">My holiday</yot-header>
-            <yot-card-actions><yot-button size="small">More?</yot-button></yot-card-actions>
           </yot-card-heading>                
         </yot-card-banner>
         <yot-card-content><div>Blah<br /> blah</div></yot-card-content>
@@ -41,12 +37,10 @@ Experiments with card components
           <yot-card-banner alt="placeholder" src="stories/samples/sunset.png"></yot-card-banner>
           <yot-header level="4">My holiday</yot-header>
           <yot-card-content><div>Blah<br /> blah</div></yot-card-content>
-          <yot-button size="small">More?</yot-button>
       </yot-card>
       <yot-card>
           <yot-header level="4">My holiday</yot-header>
           <yot-card-content><p>Doo ba doo ba blah blah</p></yot-card-content>
-          <yot-button size="small">More?</yot-button>
       </yot-card>
 </div>
 `}
@@ -60,7 +54,6 @@ Experiments with card components
         <yot-card-banner alt="placeholder" src="stories/samples/sunset.png"></yot-card-banner>
         <yot-header level="4">My holiday</yot-header>
         <yot-card-content><div>Blah<br /> blah</div></yot-card-content>
-        <yot-button size="small">More?</yot-button>
       </yot-card>
      <yot-card>
         <yot-card-heading>
@@ -68,21 +61,15 @@ Experiments with card components
         </yot-card-heading>                
         <yot-card-banner src="stories/samples/holiday.png"></yot-card-banner>
         <yot-card-content><div>Blah blah</div></yot-card-content>
-        <yot-card-actions><yot-button size="small">More?</yot-button></yot-card-actions>
       </yot-card>
        <yot-card>
-        <yot-card-banner src="stories/samples/holiday.png">
-          <yot-card-heading>
-            <yot-header level="4">My holiday</yot-header>
-            <yot-card-actions><yot-button size="small">More?</yot-button></yot-card-actions>
-          </yot-card-heading>                
+        <yot-card-banner src="stories/samples/holiday.png" heading="My holiday">
         </yot-card-banner>
-        <yot-card-content><div>Blah<br /> blah</div></yot-card-content>
+        <yot-card-content><div>Inline Blah<br /> blah</div></yot-card-content>
       </yot-card>
       <yot-card>
           <yot-header level="4">My holiday</yot-header>
           <yot-card-content><p>Doo ba doo ba blah blah</p></yot-card-content>
-          <yot-button size="small">More?</yot-button>
       </yot-card>
     </yot-card-collection>
 </div>
@@ -92,7 +79,6 @@ Experiments with card components
         <yot-card-banner alt="placeholder" src="stories/samples/sunset.png"></yot-card-banner>
         <yot-header level="4">My holiday</yot-header>
         <yot-card-content><div>Blah<br /> blah</div></yot-card-content>
-        <yot-button size="small">More?</yot-button>
       </yot-card>
       <yot-card>
         <yot-card-heading>
@@ -100,13 +86,11 @@ Experiments with card components
         </yot-card-heading>                
         <yot-card-banner src="stories/samples/holiday.png"></yot-card-banner>
         <yot-card-content><div>Blah blah</div></yot-card-content>
-        <yot-card-actions><yot-button size="small">More?</yot-button></yot-card-actions>
       </yot-card>
        <yot-card>
         <yot-card-banner src="stories/samples/holiday.png">
           <yot-card-heading>
             <yot-header level="4">My holiday</yot-header>
-            <yot-card-actions><yot-button size="small">More?</yot-button></yot-card-actions>
           </yot-card-heading>                
         </yot-card-banner>
         <yot-card-content><div>Blah<br /> blah</div></yot-card-content>
@@ -114,7 +98,6 @@ Experiments with card components
       <yot-card>
           <yot-header level="4">My holiday</yot-header>
           <yot-card-content><p>Doo ba doo ba blah blah</p></yot-card-content>
-          <yot-button size="small">More?</yot-button>
       </yot-card>
     </yot-card-collection>
 </div>
