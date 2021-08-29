@@ -3,6 +3,7 @@ import { LitElement, html, css, TemplateResult } from 'lit';
 export class YotCardContent extends LitElement {
   static styles = css`
     :host {
+      display: block;
       padding-inline: var(--spacing-slender);
       padding-block: var(--spacing-slight);
     }

@@ -5,19 +5,13 @@ export class YotCard extends LitElement {
   static styles = css`
     :host {
       position: relative;
-      overflow: hidden;
-      width: 300px;
-      display: block;
-      border: var(--spacing-slight) solid var(--palette-primary);
-    }
-
-    ::slotted([slot='actions']) {
-      padding-inline: var(--spacing-slender);
-      padding-block: var(--spacing-slender);
+      aspect-ratio: 5/4;
+      display: flex;
+      background: var(--palette-background-light);
     }
 
     article {
-      height: 100%;
+      flex: 1;
       display: flex;
       flex-direction: column;
     }

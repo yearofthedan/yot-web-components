@@ -3,20 +3,25 @@ import { LitElement, html, css, TemplateResult } from 'lit';
 export class YotCardCollection extends LitElement {
   static styles = css`
     :host {
-      display: flex;
-      height: inherit;
-      width: inherit;
+      display: block;
+      height: 100%;
       overflow: auto;
-      background-color: var(--palette-background);
-      border: var(--spacing-slight) solid var(--palette-primary);
+      padding: var(--spacing-slender);
     }
 
     section[data-direction='horizontal'] {
       width: max-content;
+      height: inherit;
+      display: flex;
+      gap: var(--spacing-slender);
     }
 
     section[data-direction='vertical'] {
       height: max-content;
+      width: inherit;
+      display: flex;
+      gap: var(--spacing-slender);
+      flex-direction: column;
     }
   `;
 

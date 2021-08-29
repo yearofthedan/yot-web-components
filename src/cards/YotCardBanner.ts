@@ -4,17 +4,17 @@ import { property } from 'lit/decorators.js';
 export class YotCardBanner extends LitElement {
   static styles = css`
     :host {
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background: black;
+      flex: 1;
     }
 
-    img {
+    div {
+      background-image: var(--banner-src);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
       width: 100%;
-      object-fit: scale-down;
-      object-position: center;
+      height: 100%;
     }
 
     slot {
@@ -22,7 +22,7 @@ export class YotCardBanner extends LitElement {
       top: 0;
       left: 0;
       display: block;
-      background: white;
+      background: var(--palette-background-light);
     }
   `;
 
@@ -33,7 +33,12 @@ export class YotCardBanner extends LitElement {
   alt?: string;
 
   render(): TemplateResult {
-    return html`<img alt=${this.alt} src=${this.src} /><slot></slot>`;
+    return html`<div
+        role="img"
+        aria-label=${this.alt}
+        style=${`--banner-src:url("${this.src}");`}
+      ></div>
+      <slot></slot>`;
   }
 }
 
