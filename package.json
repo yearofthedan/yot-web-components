@@ -31,8 +31,8 @@
     "@open-wc/testing": "^2.5.33",
     "@snowpack/plugin-typescript": "^1.2.1",
     "@storybook/addon-docs": "^6.3.2",
-    "@typescript-eslint/eslint-plugin": "^4.28.0",
-    "@typescript-eslint/parser": "^4.28.0",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
     "@web/dev-server": "^0.1.22",
     "@web/dev-server-rollup": "^0.3.9",
     "@web/dev-server-storybook": "^0.3.8",
@@ -52,8 +52,8 @@
     "rollup-plugin-copy": "^3.4.0",
     "semantic-release": "^17.1.1",
     "snowpack": "^3.8.3",
-    "tslib": "^2.3.0",
-    "typescript": "~4.3.4"
+    "tslib": "^2.3.1",
+    "typescript": "~4.4.2"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
