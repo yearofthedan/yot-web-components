@@ -43,7 +43,7 @@
     "@web/test-runner-visual-regression": "^0.6.3",
     "concurrently": "^5.1.0",
     "eslint": "^7.29.0",
-    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-prettier": "^8.3.0",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
     "prettier": "^2.2.1",
@@ -59,7 +59,7 @@
     "parser": "@typescript-eslint/parser",
     "extends": [
       "@open-wc/eslint-config",
-      "eslint-config-prettier"
+      "prettier"
     ],
     "plugins": [
       "@typescript-eslint"
