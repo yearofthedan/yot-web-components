@@ -26,4 +26,39 @@
     --palette-error-on: #eef2f1;
     --palette-info: #FDD835;
     --palette-info-on: #151414;
+
+
+    --palette-quiteblack: #151414;
+    --palette-quitewhite: #EEEEEE;
+    --palette-notsoblack: #444444;
+    --palette-notsowhite: #e8e8e8;
+    --palette-thatsgreen: #66BB6A;
+    --palette-phewshar: #c16caf;
+    --palette-verygreen: #8BC34A;
+    --palette-veryred: #D84315;
+    --palette-verycitrus: #FDD835;
+
+    --palette-background: var(--palette-quiteblack);
+    --palette-background-on: var(--palette-quitewhite);
+    --palette-surface: var(--palette-notsoblack);
+    --palette-surface-on: var(--palette-notsowhite);
+    --palette-accent: var(--palette-thatsgreen);
+    --palette-accent2: var(--palette-phewshar);
+    --palette-success: var(--palette-verygreen);
+    --palette-error: var(--palette-veryred);
+    --palette-info: var(--palette-verycitrus);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+    --palette-background: var(--palette-quitewhite);
+    --palette-background-on: var(--palette-quiteblack);
+    --palette-surface: var(--palette-notsowhite);
+    --palette-surface-on: var(--palette-notsoblack);
+    --palette-accent: var(--palette-thatsgreen);
+    --palette-accent2: var(--palette-phewshar);
+    --palette-success: var(--palette-verygreen);
+    --palette-error: var(--palette-veryred);
+    --palette-info: var(--palette-verycitrus);
+    }
 }

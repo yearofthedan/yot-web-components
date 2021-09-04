@@ -4,9 +4,17 @@
 <link rel='stylesheet' href='foundational/sizes.css' />
 <link rel='stylesheet' href='foundational/overrides.css' />
 <style>
+  body {
+    background-color: var(--palette-background);
+    color: var(--palette-background-on);
+  }
   form {
+    background-color: var(--palette-surface);
+    color: var(--palette-surface-on);
     display: grid;
-    grid-row-gap: calc(2 * var(--padding-unit));
+    grid-row-gap: calc(2 * var(--spacing-skinny));
+    width: fit-content;
+    padding: var(--spacing-skinny);
   }
 
 </style>

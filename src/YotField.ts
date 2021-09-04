@@ -1,5 +1,7 @@
 import { LitElement, html, css, TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
+import { inputModeByInputType } from './inputHelpers.js';
 
 export class YotField extends LitElement {
   static styles = css`
@@ -7,9 +9,7 @@ export class YotField extends LitElement {
       position: relative;
       min-height: var(--field-height);
       display: inline-block;
-
       font-size: var(--font-size-s);
-      background-color: var(--palette-background-light);
     }
 
     label {
@@ -18,11 +18,17 @@ export class YotField extends LitElement {
       top: 0;
     }
 
-    input[type='radio'] + label {
-      position: relative;
+    ::-webkit-calendar-picker-indicator {
+      filter: invert(80%);
     }
 
-    input[type='checkbox'] + label {
+    @media (prefers-color-scheme: light) {
+      ::-webkit-calendar-picker-indicator {
+        filter: invert(0%);
+      }
+    }
+
+    :is(input[type='radio'], input[type='checkbox']) + label {
       position: relative;
     }
 
@@ -30,37 +36,40 @@ export class YotField extends LitElement {
       top: 50%;
       transform: translateY(-50%);
       left: var(--inset-density-xs);
+      color: currentColor;
     }
 
     input:not(:focus):placeholder-shown + label {
       font-size: var(--font-size-s);
       cursor: text;
       transition: all ease-out 100ms;
+      color: currentColor;
     }
 
     label {
-      color: var(--palette-primary-dark);
       font-size: var(--font-size-xs);
       transition: all ease-in 100ms;
       font-family: inherit;
+      color: currentColor;
     }
 
     input {
       border: none;
-      border-bottom: solid 1px var(--palette-primary-dark);
-      background-color: var(--palette-background);
-      color: var(--palette-background-on);
+      border-bottom: solid 1px currentColor;
+      background-color: transparent;
+      color: currentColor;
       font-size: var(--font-size-s);
-      padding-top: calc(var(--font-size-xs) + 2 * var(--inset-density-xs));
+      padding-top: calc(var(--font-size-xs) + 2 * var(--spacing-skinny));
     }
 
     input:focus {
       outline: none;
-      border-bottom: solid 2px var(--palette-primary-dark);
+      backdrop-filter: contrast(0.8);
+      border-bottom: solid 2px var(--palette-accent);
     }
 
     input:not(:focus):placeholder-shown {
-      background-color: var(--palette-background);
+      color: currentColor;
     }
 
     input::placeholder {
@@ -73,14 +82,13 @@ export class YotField extends LitElement {
       transition: all ease-out 100ms;
       font-style: italic;
       font-size: var(--font-size-xs);
-      padding-left: var(--padding-unit);
+      padding-left: var(--spacing-skinny);
     }
 
     [role='alert'] {
       display: inline-block;
-      padding: var(--padding-unit);
-      font-size: var(--font-size-xs);
       color: var(--palette-error);
+      font-size: var(--font-size-xs);
     }
   `;
 
@@ -139,17 +147,25 @@ export class YotField extends LitElement {
     return html`
       <input
         id="input-${this.id}"
+        part="input"
         name="${this.name}"
+        inputmode=${ifDefined(inputModeByInputType[this.type])}
         type="${this.type}"
         .value="${this.value}"
         placeholder="${this.placeholder}"
         @input="${this.__inputChanged}"
-        part="input"
+        aria-describedby=${ifDefined(
+          this.error ? `error-${this.id}` : undefined
+        )}
       />
       ${this.label
-        ? html`<label for="input-${this.id}">${this.label}</label>`
+        ? html`<label part="label" for="input-${this.id}">${this.label}</label>`
         : ''}
-      ${this.error ? html`<span role="alert">${this.error}</span>` : ''}
+      ${this.error
+        ? html`<span part="error" role="alert" id="error-${this.id}"
+            >${this.error}</span
+          >`
+        : ''}
     `;
   }
 }

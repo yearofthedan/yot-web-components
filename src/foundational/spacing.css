@@ -1,11 +1,17 @@
 :root {
     --spacing-unit: 0.5rem;
 
-    --spacing-teeny: calc(var(--spacing-unit) * 0.25);
-    --spacing-slight: calc(var(--spacing-unit) * 0.5);
-    --spacing-slender: calc(var(--spacing-unit) * 1);
-    --spacing-noticeable: calc(var(--spacing-unit) * 2);
-    --spacing-comfortable: calc(var(--spacing-unit) * 4);
+    --spacing-sheer: 0.125rem;
+    --spacing-skinny: 0.25rem;
+    --spacing-slim: 0.5rem;
+    --spacing-straight: 1rem;
+    --spacing-loose: 2rem;
+
+    --spacing-teeny: var(--spacing-sheer);
+    --spacing-slight: var(--spacing-skinny);
+    --spacing-slender: var(--spacing-slim);
+    --spacing-noticeable: var(--spacing-straight);
+    --spacing-comfortable: var(--spacing-loose);
     --spacing-pronounced: calc(var(--spacing-unit) * 8);
     --spacing-huge: calc(var(--spacing-unit) * 16);
 

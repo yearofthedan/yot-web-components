@@ -1,17 +1,19 @@
 import { Meta, Story } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { html } from '@open-wc/testing';
 import { swatchList } from './palette/swatchList';
+import { single, singleWithOn } from './palette/swatch';
 
 <Meta title="Foundational/Palette"/>
 
 ## Primary
 
-  <Story name="Primary">
+<Story name="Primary">
     {swatchList([
       { name: 'primary-light', color: '#C8E6C9', on: '#151414' },
       { name: 'primary', color: '#66BB6A', on: '#151414' },
       { name: 'primary-dark', color: '#388E3C', on: '#EEF2F1' },
     ])}
-  </Story>
+</Story>
 
 ## Secondary
 
@@ -42,3 +44,44 @@ import { swatchList } from './palette/swatchList';
     { name: 'info', color: '#FDD835', on: '#151414' },
   ])}
 </Story>
+
+## Experimental 
+<Story name="Experimental">
+  {html`<style>
+      ul {
+        list-style: none;
+        display: inline-block;
+        width: 100%;
+      }
+    </style>
+    <ul>
+      ${single('--palette-background')}
+      ${single('--palette-background-on')}
+      ${single('--palette-accent')}
+      ${singleWithOn('--palette-background', '--palette-background-on', 'I am for general text')}
+      ${singleWithOn('--palette-background', '--palette-accent', 'I am for highlighted text')}
+    </ul>
+    <ul>
+      ${single('--palette-surface')}
+      ${single('--palette-surface-on')}
+      ${single('--palette-accent2')}
+      ${singleWithOn('--palette-surface', '--palette-surface-on', 'I am for general text')}
+      ${singleWithOn('--palette-surface', '--palette-accent2', 'I am for highlighted text')}
+    </ul>
+    <ul>
+      ${single('--palette-success')}
+      ${single('--palette-info')}
+      ${single('--palette-error')}
+      ${singleWithOn('--palette-surface', '--palette-success', 'Success!')}
+      ${singleWithOn('--palette-surface', '--palette-info', 'FYI...')}
+      ${singleWithOn('--palette-surface', '--palette-error', 'Warning!')}
+    </ul>
+    `}
+</Story>
+
+<!-- Background Colour
+Alert Colour
+Text On Alert Colour
+
+Disabled Colour
+Text On Disabled Colour -->

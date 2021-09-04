@@ -25,3 +25,22 @@ WIP, but for now `yarn storybook`. I'll get something deployed soon too.
 
 ## Inspiration
 - Stumbled across [Duetds](https://www.duetds.com/components/heading/) in a search for different Heading patterns to toy with.
+
+## Palette
+
+Background Colour
+Accent Text on Background Colour
+Text on Background Colour
+
+Surface Colour
+Accent Text on Background Colour
+Text on Surface Colour
+
+Accent Colour
+Second Accent Colour
+
+Alert Colour
+Text On Alert Colour
+
+Disabled Colour
+Text On Disabled Colour

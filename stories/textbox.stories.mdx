@@ -17,10 +17,6 @@ yarn add yot-textbox
 import 'yot-textbox/yot-textbox.js';
 ```
 
-export const TextField = () => html`
-  <yot-textbox label="Text field" field-id="text"></yot-textbox>
-`;
-
 export const Multiline = () => html`
   <yot-textbox label="Text field" field-id="multiline" multiline="true"></yot-textbox>
 `;
@@ -51,7 +47,19 @@ export const Errors = () => html`
 `;
 
 <Canvas>
-  <Story name="TextField">{TextField}</Story>
+  <Story name="TextField">{html`
+  <yot-textbox label="Text field" field-id="text"></yot-textbox>
+  <style>
+    yot-textbox.custom::part(label) {
+      color: var(--palette-accent2);
+    }
+    yot-textbox.custom::part(input) {
+      color: var(--palette-accent2);
+      outline-color: var(--palette-background);
+    }
+</style>
+  <yot-textbox class="custom" label="Text field" field-id="text"></yot-textbox>
+`}</Story>
   <Story name="Multiline">{Multiline}</Story>
   <Story name="Phone">{Phone}</Story>
   <Story name="Email">{Email}</Story>
