@@ -9,18 +9,37 @@ export class YotCardCollection extends LitElement {
       padding: var(--spacing-slim);
     }
 
+    section {
+      display: flex;
+      gap: var(--spacing-slim);
+    }
+
+    :host::-webkit-scrollbar {
+      width: var(--spacing-slim);
+      height: var(--spacing-slim);
+    }
+
+    :host::-webkit-scrollbar-track {
+      background-color: inherit;
+    }
+
+    :host::-webkit-scrollbar-thumb {
+      border-radius: var(--spacing-slim);
+      color: var(--palette-background);
+      border: solid var(--spacing-sheer) currentColor;
+      background-color: var(--palette-background-on);
+      box-shadow: inset currentColor -2px -2px 0px 0px;
+    }
+
     section[data-direction='horizontal'] {
       width: max-content;
       height: inherit;
-      display: flex;
-      gap: var(--spacing-slim);
+      flex-direction: row;
     }
 
     section[data-direction='vertical'] {
       height: max-content;
       width: inherit;
-      display: flex;
-      gap: var(--spacing-slim);
       flex-direction: column;
     }
   `;
