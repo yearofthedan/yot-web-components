@@ -4,9 +4,9 @@ import { property } from 'lit/decorators.js';
 export class YotCardBanner extends LitElement {
   static styles = css`
     :host {
-      background: var(--palette-background-dark);
       flex: 1;
       position: relative;
+      backdrop-filter: contrast(1.6);
     }
 
     div {
@@ -23,7 +23,6 @@ export class YotCardBanner extends LitElement {
       top: 0;
       right: 0;
       display: block;
-      background: var(--palette-background-light);
       justify-content: center;
       align-items: center;
     }
@@ -31,9 +30,8 @@ export class YotCardBanner extends LitElement {
     yot-header {
       position: absolute;
       bottom: 0;
-      left: 0px;
+      left: var(--spacing-slim);
       display: block;
-      background: var(--palette-background-light);
       justify-content: center;
       align-items: center;
     }

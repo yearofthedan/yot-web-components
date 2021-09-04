@@ -6,21 +6,21 @@ export class YotCardCollection extends LitElement {
       display: block;
       height: 100%;
       overflow: auto;
-      padding: var(--spacing-slender);
+      padding: var(--spacing-slim);
     }
 
     section[data-direction='horizontal'] {
       width: max-content;
       height: inherit;
       display: flex;
-      gap: var(--spacing-slender);
+      gap: var(--spacing-slim);
     }
 
     section[data-direction='vertical'] {
       height: max-content;
       width: inherit;
       display: flex;
-      gap: var(--spacing-slender);
+      gap: var(--spacing-slim);
       flex-direction: column;
     }
   `;

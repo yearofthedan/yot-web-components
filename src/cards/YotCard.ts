@@ -7,7 +7,8 @@ export class YotCard extends LitElement {
       position: relative;
       aspect-ratio: 5/4;
       display: flex;
-      background: var(--palette-background-light);
+      color: var(--palette-surface-on);
+      background: var(--palette-surface);
     }
 
     article {
