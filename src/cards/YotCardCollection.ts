@@ -14,21 +14,28 @@ export class YotCardCollection extends LitElement {
       gap: var(--spacing-slim);
     }
 
+    :host(:hover)::-webkit-scrollbar-thumb {
+      background-color: rgb(180 180 180 / 50%);
+      display: initial;
+    }
+
+    :host(:hover)::-webkit-scrollbar-track {
+      display: initial;
+    }
+
     :host::-webkit-scrollbar {
       width: var(--spacing-slim);
       height: var(--spacing-slim);
     }
 
     :host::-webkit-scrollbar-track {
+      display: none;
       background-color: inherit;
     }
 
     :host::-webkit-scrollbar-thumb {
-      border-radius: var(--spacing-slim);
-      color: var(--palette-background);
-      border: solid var(--spacing-sheer) currentColor;
-      background-color: var(--palette-background-on);
-      box-shadow: inset currentColor -2px -2px 0px 0px;
+      display: none;
+      border-radius: var(--spacing-sheer);
     }
 
     section[data-direction='horizontal'] {
