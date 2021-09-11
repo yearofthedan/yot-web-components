@@ -6,7 +6,7 @@ export class YotCardBanner extends LitElement {
     :host {
       flex: 1;
       position: relative;
-      backdrop-filter: contrast(1.6);
+      backdrop-filter: brightness(0.7);
     }
 
     div {
