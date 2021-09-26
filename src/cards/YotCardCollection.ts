@@ -1,4 +1,5 @@
 import { LitElement, html, css, TemplateResult } from 'lit';
+import { state } from 'lit/decorators.js';
 
 export class YotCardCollection extends LitElement {
   static styles = css`
@@ -51,14 +52,26 @@ export class YotCardCollection extends LitElement {
     }
   `;
 
+  @state()
+  protected _direction = 'horizontal';
+
+  private resetDirection() {
+    const parentBounds = this.parentElement!.getBoundingClientRect();
+    this._direction =
+      parentBounds.height > parentBounds.width ? 'vertical' : 'horizontal';
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.resetDirection();
+    window.addEventListener('resize', () => {
+      this.resetDirection();
+    });
+  }
+
   render(): TemplateResult {
-    const parentDims = this.parentElement!.getBoundingClientRect();
     return html`
-      <section
-        data-direction=${parentDims.height > parentDims.width
-          ? 'vertical'
-          : 'horizontal'}
-      >
+      <section data-direction=${this._direction}>
         <slot></slot>
       </section>
     `;
