@@ -12,7 +12,6 @@ const successIndicator = css`
 
   slot[part='success'] > span {
     display: block;
-    color: var(--palette-primary-light-on);
     border-radius: 100%;
   }
 `;
@@ -52,7 +51,7 @@ export class YotButton extends LitElement {
   static styles = css`
     :host {
       width: fit-content;
-      display: inline-block;
+      display: inline-flex;
       position: relative;
     }
 
@@ -60,26 +59,32 @@ export class YotButton extends LitElement {
 
     button {
       cursor: pointer;
-      background-color: var(--palette-primary);
-      color: var(--palette-primary-on);
+      border: var(--spacing-sheer) solid currentColor;
+      color: var(--palette-accent);
+      background-color: transparent;
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: background 200ms;
+      transition: backdrop-filter 200ms;
+    }
+
+    slot[part='label'] {
+      display: inline-flex;
+      gap: var(--spacing-skinny);
     }
 
     button[data-action-state='loading'] > slot[part='loading'] {
       display: flex;
+      backdrop-filter: contrast(0.6);
     }
 
     button[disabled] {
-      background-color: var(--palette-primary-light);
+      backdrop-filter: contrast(0.6);
+      border: var(--spacing-sheer) solid inherit;
     }
 
     button[data-action-state='idle']:hover {
-      background: var(--palette-primary-light)
-        radial-gradient(circle, transparent 1%, var(--palette-primary-light) 1%)
-        center/15000%;
+      backdrop-filter: contrast(0.8);
     }
 
     button[data-action-state='idle']:active {
@@ -87,12 +92,17 @@ export class YotButton extends LitElement {
       transition: filter 100ms;
     }
 
+    :is(button[data-action-state='loading'], button[data-action-state='success'])
+      > slot[part='label'] {
+      display: none;
+    }
+
     slot {
       display: none;
     }
 
     button[data-action-state='idle'] > slot[part='label'] {
-      display: inline;
+      display: inline-flex;
     }
 
     ${successIndicator}
