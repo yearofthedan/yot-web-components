@@ -1,9 +1,9 @@
 :root {
     --spacing-unit: 0.5rem;
 
-    --spacing-sheer: 0.125rem;
-    --spacing-skinny: 0.25rem;
-    --spacing-slim: 0.5rem;
+    --spacing-sheer: calc(var(--spacing-unit) / 8);
+    --spacing-skinny: calc(var(--spacing-unit) / 2);
+    --spacing-slim: var(--spacing-unit);
     --spacing-straight: 1rem;
     --spacing-loose: 2rem;
 

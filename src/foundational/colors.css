@@ -27,12 +27,11 @@
     --palette-info: #FDD835;
     --palette-info-on: #151414;
 
-
     --palette-quiteblack: #151414;
     --palette-quitewhite: #EEEEEE;
-    --palette-notsoblack: #444444;
+    --palette-notsoblack: #232323;
     --palette-notsowhite: #fbfbfb;
-    --palette-thatsgreen: #66BB6A;
+    --palette-thatsgreen: rgb(102 187 106);
     --palette-phewshar: #c16caf;
     --palette-verygreen: #8BC34A;
     --palette-veryred: #D84315;

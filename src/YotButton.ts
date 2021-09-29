@@ -59,13 +59,14 @@ export class YotButton extends LitElement {
 
     button {
       cursor: pointer;
-      border: var(--spacing-sheer) solid currentColor;
-      color: var(--palette-accent);
       background-color: transparent;
+      color: inherit;
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: backdrop-filter 200ms;
+      transition: backdrop-filter 200ms ease 0s;
+      border: solid var(--spacing-sheer) var(--palette-accent);
+      border-radius: var(--spacing-sheer);
     }
 
     slot[part='label'] {
