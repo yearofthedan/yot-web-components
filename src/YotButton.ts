@@ -26,24 +26,24 @@ const buttonSpacing = css`
   }
 
   button[size='small'] {
-    padding: var(--inset-density-xs) var(--inset-density-m);
+    padding: var(--spacing-slim);
     font-size: var(--font-size-xs);
-    height: var(--button-height-s);
-    min-width: 4rem;
+    max-height: var(--button-height-s);
+    width: 4rem;
   }
 
   button[size='regular'] {
-    padding: var(--inset-density-s) var(--inset-density-m);
+    padding: var(--spacing-straight);
     font-size: var(--font-size-s);
-    height: var(--button-height);
-    min-width: 8rem;
+    max-height: var(--button-height);
+    width: 8rem;
   }
 
   button[size='large'] {
-    padding: var(--inset-density-m) var(--inset-density-l);
-    font-size: var(--font-size-m);
-    height: var(--button-height-l);
-    min-width: 8rem;
+    padding: var(--spacing-straight);
+    font-size: var(--font-size-l);
+    max-height: var(--button-height-l);
+    width: 16rem;
   }
 `;
 
@@ -72,6 +72,10 @@ export class YotButton extends LitElement {
     slot[part='label'] {
       display: inline-flex;
       gap: var(--spacing-skinny);
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
 
     button[data-action-state='loading'] > slot[part='loading'] {
