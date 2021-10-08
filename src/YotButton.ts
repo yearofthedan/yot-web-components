@@ -29,28 +29,27 @@ const buttonSpacing = css`
     padding: var(--spacing-slim);
     font-size: var(--font-size-xs);
     max-height: var(--button-height-s);
-    width: 4rem;
   }
 
   button[size='regular'] {
     padding: var(--spacing-straight);
     font-size: var(--font-size-s);
     max-height: var(--button-height);
-    width: 8rem;
   }
 
   button[size='large'] {
     padding: var(--spacing-straight);
     font-size: var(--font-size-l);
     max-height: var(--button-height-l);
-    width: 16rem;
   }
 `;
 
 export class YotButton extends LitElement {
   static styles = css`
     :host {
-      width: fit-content;
+      min-width: fit-content;
+      width: 100%;
+      flex: 1;
       display: inline-flex;
       position: relative;
     }
@@ -63,6 +62,7 @@ export class YotButton extends LitElement {
       color: inherit;
       display: flex;
       justify-content: center;
+      width: inherit;
       align-items: center;
       transition: backdrop-filter 200ms ease 0s;
       border: solid var(--spacing-sheer) var(--palette-accent);
