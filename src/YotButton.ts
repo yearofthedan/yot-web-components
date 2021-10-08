@@ -49,7 +49,6 @@ export class YotButton extends LitElement {
     :host {
       min-width: fit-content;
       width: 100%;
-      flex: 1;
       display: inline-flex;
       position: relative;
     }
