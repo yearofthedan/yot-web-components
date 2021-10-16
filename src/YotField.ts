@@ -57,6 +57,7 @@ export class YotField extends LitElement {
       border: none;
       border-bottom: solid 1px currentColor;
       background-color: transparent;
+      border-radius: 0;
       color: currentColor;
       font-size: var(--font-size-s);
       padding-top: calc(var(--font-size-xs) + 2 * var(--spacing-skinny));
