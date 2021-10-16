@@ -96,8 +96,7 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{ts,html}": "eslint --cache --fix",
-    "*.gitignore": "prettier --write"
+    "*.{ts,html}": "eslint --cache --fix"
   },
   "version": "0.0.0-development",
   "repository": {

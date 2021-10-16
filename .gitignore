@@ -5,3 +5,4 @@ dist/
 storybook-static/
 screenshots/**/failed/
 coverage/
+.eslintcache

@@ -10,6 +10,7 @@ export class YotField extends LitElement {
       min-height: var(--field-height);
       display: inline-block;
       font-size: var(--font-size-s);
+      width: 100%;
     }
 
     label {
@@ -61,6 +62,7 @@ export class YotField extends LitElement {
       color: currentColor;
       font-size: var(--font-size-s);
       padding-top: calc(var(--font-size-xs) + 2 * var(--spacing-skinny));
+      width: inherit;
     }
 
     input:focus {
